@@ -1,21 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ArrowUpToLine } from "lucide-react";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 export const ScrollToTop = () => {
-  const [showTopBtn, setShowTopBtn] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
-    });
-  }, []);
+  const showTopBtn = useScrollToTop();
 
   const goToTop = () => {
     window.scroll({
