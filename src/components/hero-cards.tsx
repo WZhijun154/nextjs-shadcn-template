@@ -111,7 +111,10 @@ export const HeroCards = () => {
         <CardHeader>
           <CardTitle className="flex item-center justify-between">
             Free
-            <Badge variant="secondary" className="text-sm text-primary">
+            <Badge
+              variant="secondary"
+              className="custom-badge-text text-primary"
+            >
               Most popular
             </Badge>
           </CardTitle>

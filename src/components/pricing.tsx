@@ -74,8 +74,8 @@ const pricingList: PricingProps[] = [
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="container py-16 sm:py-24">
-      <h2 className="text-3xl md:text-4xl font-bold text-center">
+    <section id="pricing" className="container custom-section-padding">
+      <h2 className="custom-h2 text-center">
         Get
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           {" "}
@@ -101,7 +101,10 @@ export const Pricing = () => {
               <CardTitle className="flex item-center justify-between">
                 {pricing.title}
                 {pricing.popular === PopularPlanType.YES ? (
-                  <Badge variant="secondary" className="text-sm text-primary">
+                  <Badge
+                    variant="secondary"
+                    className="custom-badge-text text-primary"
+                  >
                     Most popular
                   </Badge>
                 ) : null}

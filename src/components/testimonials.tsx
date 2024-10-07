@@ -61,8 +61,8 @@ const testimonials: TestimonialProps[] = [
 
 export const Testimonials = () => {
   return (
-    <section id="testimonials" className="container py-16 sm:py-24">
-      <h2 className="text-3xl md:text-4xl font-bold">
+    <section id="testimonials" className="container custom-section-padding">
+      <h2 className="custom-h2">
         Discover Why
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           {" "}
@@ -71,7 +71,7 @@ export const Testimonials = () => {
         This Landing Page
       </h2>
 
-      <p className="text-xl text-muted-foreground pt-4 pb-8">
+      <p className="custom-muted-description pt-4 pb-8">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde error
         facere hic reiciendis illo
       </p>

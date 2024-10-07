@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev"
+    },
+    {
+      "name": "Next.js: debug test",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpx tsx test.ts",
+      "env": {
+        "https_proxy": "http://localhost:7897",
+        "http_proxy": "http://localhost:7897"
+      }
+    },
+    {
+      "name": "Next.js: debug build process",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm build"
+    },
+    {
+      "name": "Next.js: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "runtimeExecutable": "/usr/bin/google-chrome",
+      "runtimeArgs": [
+        "--disable-web-security",
+        "--user-data-dir=/tmp/chrome_dev"
+      ],
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      },
+      "env": {
+        "https_proxy": "http://localhost:7897",
+        "http_proxy": "http://localhost:7897"
+      },
+    }
+  ]
+}

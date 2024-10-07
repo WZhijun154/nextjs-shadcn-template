@@ -36,15 +36,18 @@ const features: FeatureProps[] = [
 
 export const HowItWorks = () => {
   return (
-    <section id="howItWorks" className="container text-center py-16 sm:py-24">
-      <h2 className="text-3xl md:text-4xl font-bold ">
+    <section
+      id="howItWorks"
+      className="container text-center custom-section-padding"
+    >
+      <h2 className="custom-h2">
         How It{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Works{" "}
         </span>
         Step-by-Step Guide
       </h2>
-      <p className="md:w-3/4 mx-auto mt-4 mb-8 text-xl text-muted-foreground">
+      <p className="custom-muted-description md:w-3/4 mx-auto  mb-8">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
         dolor pariatur sit!
       </p>

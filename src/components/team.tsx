@@ -108,15 +108,15 @@ export const Team = () => {
   };
 
   return (
-    <section id="team" className="container py-16 sm:py-24">
-      <h2 className="text-3xl md:text-4xl font-bold">
+    <section id="team" className="container custom-section-padding">
+      <h2 className="custom-h2">
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Our Dedicated{" "}
         </span>
         Crew
       </h2>
 
-      <p className="mt-4 mb-10 text-xl text-muted-foreground">
+      <p className="custom-margin-after-title mb-10 custom-muted-description">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
         dolor pariatur sit!
       </p>

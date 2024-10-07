@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <section className="container grid lg:grid-cols-2 place-items-center pt-20 pb-16 md:pt-32 md:pb-24 gap-10">
       <div className="text-center lg:text-start space-y-6">
-        <div className="text-5xl md:text-6xl font-bold">
+        <div className="custom-h1">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
               Shadcn
@@ -24,7 +24,7 @@ export const Hero = () => {
           </h2>
         </div>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
+        <p className="custom-muted-description md:w-10/12 mx-auto lg:mx-0">
           Build your Nextjs landing page effortlessly with the required sections
           to your project.
         </p>
