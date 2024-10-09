@@ -9,7 +9,6 @@ import { Services } from "@/components/services";
 import { Sponsors } from "@/components/sponsors";
 import { Team } from "@/components/team";
 import { Testimonials } from "@/components/testimonials";
-
 import { Newsletter, ShadowBackground } from "@/components/dynamics";
 
 export default function Home() {

@@ -2,12 +2,11 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { toast } from "sonner";
 
-export const SITE_URL =
-  process.env.PRODUCTION === "true"
-    ? process.env.SITE_URL
-    : "http://localhost:3000";
+export const IS_PRODUCTION = process.env.IS_PRODUCTION === "true";
 
-export const IS_PRODUCTION = process.env.NODE_ENV === "production";
+export const SITE_URL = IS_PRODUCTION
+  ? (process.env.SITE_URL as string)
+  : "http://localhost:3000";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

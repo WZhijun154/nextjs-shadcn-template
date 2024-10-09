@@ -314,3 +314,13 @@ export const Toaster = dynamic(
     ssr: false,
   }
 );
+
+export const FloatingSearchButton = dynamic(
+  () =>
+    import("@/components/floating-search-button").then(
+      (mod) => mod.FloatingSearchButton
+    ),
+  {
+    ssr: false,
+  }
+);

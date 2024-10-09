@@ -12,10 +12,6 @@
       "type": "node-terminal",
       "request": "launch",
       "command": "pnpx tsx test.ts",
-      "env": {
-        "https_proxy": "http://localhost:7897",
-        "http_proxy": "http://localhost:7897"
-      }
     },
     {
       "name": "Next.js: debug build process",
@@ -43,10 +39,6 @@
         "pattern": "- Local:.+(https?://.+)",
         "uriFormat": "%s",
         "action": "debugWithChrome"
-      },
-      "env": {
-        "https_proxy": "http://localhost:7897",
-        "http_proxy": "http://localhost:7897"
       },
     }
   ]
