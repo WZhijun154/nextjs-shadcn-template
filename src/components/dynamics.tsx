@@ -324,3 +324,11 @@ export const FloatingSearchButton = dynamic(
     ssr: false,
   }
 );
+
+export const ScrollProgress = dynamic(
+  () =>
+    import("@/components/scroll-progress").then((mod) => mod.ScrollProgress),
+  {
+    ssr: false,
+  }
+);

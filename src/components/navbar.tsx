@@ -47,6 +47,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      {/* <ScrollProgress /> */}
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
@@ -80,7 +81,7 @@ export const Navbar = () => {
                     Shadcn/Nextjs
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                <div className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <a
                       rel="noreferrer noopener"
@@ -103,13 +104,13 @@ export const Navbar = () => {
                     <GitHubLogoIcon className="mr-2 w-5 h-5" />
                     Github
                   </a>
-                </nav>
+                </div>
               </SheetContent>
             </Sheet>
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2">
+          <div className="hidden md:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
               <a
                 rel="noreferrer noopener"
@@ -122,7 +123,7 @@ export const Navbar = () => {
                 {route.label}
               </a>
             ))}
-          </nav>
+          </div>
 
           <div className="hidden md:flex gap-2">
             <a
