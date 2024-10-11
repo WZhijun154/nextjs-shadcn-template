@@ -545,11 +545,9 @@ export const DialogDescription = dynamic(
   }
 );
 
-export const LanguageSelector = dynamic(
+export const LocaleSelector = dynamic(
   () =>
-    import("@/components/language-selector").then(
-      (mod) => mod.LanguageSelector
-    ),
+    import("@/components/language-selector").then((mod) => mod.LocaleSelector),
   {
     ssr: false,
   }

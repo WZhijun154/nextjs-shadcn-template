@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils-common";
 import { Dialog, DialogContent } from "@/components/dynamics";
 import { Search } from "lucide-react";
 import React from "react";

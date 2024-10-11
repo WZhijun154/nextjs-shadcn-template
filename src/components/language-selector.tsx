@@ -7,8 +7,12 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from "@/components/ui/select";
+import { useRouter, usePathname } from "next/navigation";
+import {
+  getSanitizedPathname,
+  isPathnameMissingLocale,
+} from "@/lib/utils-client-side";
 
 const languages = [
   { code: "en", name: "English" },
@@ -16,14 +20,38 @@ const languages = [
   { code: "zh", name: "中文" },
 ];
 
-export function LanguageSelector() {
-  const [language, setLanguage] = React.useState("en");
+const changeLanguage = (language: string, pathname: string) => {
+  if (isPathnameMissingLocale(pathname)) {
+    return `/${language}/${pathname}`;
+  }
+  const sanitizedPathname = getSanitizedPathname(pathname);
+
+  const targetPathname = `/${language}/${sanitizedPathname
+    .split("/")
+    .slice(1)
+    .join()}`;
+  return targetPathname;
+};
+
+export function LocaleSelector() {
+  const router = useRouter();
+  const [language, setLanguage] = React.useState("");
+  const pathname = usePathname();
+  const href = changeLanguage(language, pathname);
 
   return (
-    <Select value={language} onValueChange={setLanguage}>
-      <SelectTrigger className="w-24" noCaret>
-        <Globe className="mr-2 h-4 w-4" />
-        <SelectValue placeholder="" />
+    <Select
+      value={language}
+      onValueChange={(value) => {
+        setLanguage(value);
+        router.push(href);
+      }}
+    >
+      <SelectTrigger
+        className="w-9 px-0 justify-center items-center flex flex-row border-none"
+        noCaret
+      >
+        <Globe className="h-5 w-5" />
       </SelectTrigger>
       <SelectContent className="w-24">
         {languages.map((lang) => (

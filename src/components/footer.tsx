@@ -1,7 +1,7 @@
 import { LogoIcon } from "@/components/icons";
-import { UI_TITLE } from "@/lib/utils";
+import { UI_TITLE } from "@/lib/utils-common";
 import Link from "next/link";
-import { TODAY_YEAR } from "@/lib/utils";
+import { TODAY_YEAR } from "@/lib/utils-server-side";
 
 export const Footer = () => {
   return (
@@ -10,7 +10,6 @@ export const Footer = () => {
       className="flex flex-col items-center bg-muted text-muted-foreground"
     >
       <hr className="w-full mx-auto" />
-
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
           <Link

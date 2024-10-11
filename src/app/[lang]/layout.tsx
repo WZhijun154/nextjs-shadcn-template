@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import "./globals.css";
+import "../globals.css";
 import Script from "next/script";
 import { Footer } from "@/components/footer";
 import {
@@ -10,7 +10,8 @@ import {
   FloatingSearchButton,
 } from "@/components/dynamics";
 import { ProxyAgent, setGlobalDispatcher } from "undici";
-import { IS_PRODUCTION, SITE_URL } from "@/lib/utils";
+import { IS_PRODUCTION, SITE_URL } from "@/lib/utils-server-side";
+import { i18n, Locale } from "../../../i18n-config";
 
 // let server side fetch operations use proxy agent in development environment
 if (!IS_PRODUCTION) {
@@ -34,12 +35,12 @@ export const metadata = {
 };
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "../fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
@@ -73,15 +74,19 @@ const searchItems = [
   { value: "duckduckgo", label: "DuckDuckGo" },
 ];
 
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: { lang: Locale };
+}
+
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  params: { lang },
+}: Readonly<RootLayoutProps>) {
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} transition-all duration-300`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all duration-300`}
       >
         <Providers>
           <Navbar />
@@ -95,4 +100,8 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
 }

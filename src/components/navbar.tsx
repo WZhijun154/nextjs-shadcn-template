@@ -16,9 +16,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  LanguageSelector,
+  LocaleSelector,
 } from "@/components/dynamics";
-import { UI_TITLE } from "@/lib/utils";
+import { UI_TITLE } from "@/lib/utils-common";
 import Link from "next/link";
 interface RouteProps {
   href: string;
@@ -63,9 +63,9 @@ export const Navbar = () => {
           </NavigationMenuItem>
 
           {/* mobile */}
-          <span className="flex md:hidden">
+          <span className="flex md:hidden items-center">
+            <LocaleSelector />
             <ThemeSwitch />
-
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
@@ -105,7 +105,6 @@ export const Navbar = () => {
                     <GitHubLogoIcon className="mr-2 w-5 h-5" />
                     Github
                   </Link> */}
-                  <LanguageSelector />
                 </div>
               </SheetContent>
             </Sheet>
@@ -138,7 +137,7 @@ export const Navbar = () => {
               Github
             </Link> */}
 
-            <LanguageSelector />
+            <LocaleSelector />
             <ThemeSwitch />
           </div>
         </NavigationMenuList>
