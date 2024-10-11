@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-
+import Link from "next/link";
 interface TeamProps {
   imageUrl: string;
   name: string;
@@ -147,7 +147,7 @@ export const Team = () => {
               <CardFooter>
                 {socialNetworks.map(({ name, url }: SociaNetworkslProps) => (
                   <div key={name}>
-                    <a
+                    <Link
                       rel="noreferrer noopener"
                       href={url}
                       target="_blank"
@@ -158,7 +158,7 @@ export const Team = () => {
                     >
                       <span className="sr-only">{name} icon</span>
                       {socialIcon(name)}
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </CardFooter>

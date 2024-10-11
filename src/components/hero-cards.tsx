@@ -11,9 +11,16 @@ import {
 import { Check, Linkedin } from "lucide-react";
 import { LightBulbIcon } from "@/components/icons";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/dynamics";
-
+import {
+  AUTHOR_AVATAR_URL,
+  AUTHOR_GITHUB_URL,
+  AUTHOR_NAME,
+  AUTHOR_TITLE,
+  AUTHOR_X_URL,
+} from "@/lib/utils";
 export const HeroCards = () => {
   return (
     <div className="hidden lg:flex flex-row flex-wrap gap-8 relative w-[700px] h-[500px]">
@@ -38,13 +45,13 @@ export const HeroCards = () => {
       <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader className="mt-8 flex justify-center items-center pb-2">
           <img
-            src="https://i.pravatar.cc/150?img=58"
+            src={AUTHOR_AVATAR_URL}
             alt="user avatar"
             className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
           />
-          <CardTitle className="text-center">Leo Miranda</CardTitle>
+          <CardTitle className="text-center">{AUTHOR_NAME}</CardTitle>
           <CardDescription className="font-normal text-primary">
-            Frontend Developer
+            {AUTHOR_TITLE}
           </CardDescription>
         </CardHeader>
 
@@ -57,9 +64,9 @@ export const HeroCards = () => {
 
         <CardFooter>
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa"
+              href={AUTHOR_GITHUB_URL}
               target="_blank"
               className={buttonVariants({
                 variant: "ghost",
@@ -68,10 +75,10 @@ export const HeroCards = () => {
             >
               <span className="sr-only">Github icon</span>
               <GitHubLogoIcon className="w-5 h-5" />
-            </a>
-            <a
+            </Link>
+            <Link
               rel="noreferrer noopener"
-              href="https://twitter.com/leo_mirand4"
+              href={AUTHOR_X_URL}
               target="_blank"
               className={buttonVariants({
                 variant: "ghost",
@@ -88,11 +95,11 @@ export const HeroCards = () => {
                 <title>X</title>
                 <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
               </svg>
-            </a>
+            </Link>
 
-            <a
+            <Link
               rel="noreferrer noopener"
-              href="https://www.linkedin.com/in/leopoldo-miranda/"
+              href="/"
               target="_blank"
               className={buttonVariants({
                 variant: "ghost",
@@ -101,7 +108,7 @@ export const HeroCards = () => {
             >
               <span className="sr-only">Linkedin icon</span>
               <Linkedin size="20" />
-            </a>
+            </Link>
           </div>
         </CardFooter>
       </Card>

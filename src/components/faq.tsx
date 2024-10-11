@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/dynamics";
+import Link from "next/link";
 interface FAQProps {
   question: string;
   answer: string;
@@ -67,13 +68,13 @@ export const FAQ = () => {
 
       <h3 className="font-medium mt-4">
         Still have questions?{" "}
-        <a
+        <Link
           rel="noreferrer noopener"
           href="#"
           className="text-primary transition-all border-primary hover:border-b-2"
         >
           Contact us
-        </a>
+        </Link>
       </h3>
     </section>
   );

@@ -1,151 +1,161 @@
 import { LogoIcon } from "@/components/icons";
+import {
+  UI_TITLE,
+  AUTHOR_NAME,
+  AUTHOR_X_URL,
+  AUTHOR_GITHUB_URL,
+} from "@/lib/utils";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer id="footer" className="flex flex-col items-center">
+    <footer
+      id="footer"
+      className="flex flex-col items-center bg-muted text-muted-foreground"
+    >
       <hr className="w-11/12 mx-auto" />
 
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
-          <a
+          <Link
             rel="noreferrer noopener"
             href="/"
             className="font-bold text-xl flex"
           >
             <LogoIcon />
-            ShadcnUI/Nextjs
-          </a>
+            {UI_TITLE}
+          </Link>
         </div>
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Follow US</h3>
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
-              href="#"
+              href={AUTHOR_GITHUB_URL}
               className="opacity-60 hover:opacity-100"
             >
               Github
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
-              href="#"
+              href={AUTHOR_X_URL}
               className="opacity-60 hover:opacity-100"
             >
               Twitter
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Dribbble
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Platforms</h3>
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Web
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Mobile
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Desktop
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">About</h3>
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Features
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Pricing
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               FAQ
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Community</h3>
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Youtube
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Discord
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
+            <Link
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
               Twitch
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -153,14 +163,14 @@ export const Footer = () => {
       <section className="container pb-14 text-center">
         <h3>
           &copy; 2024 Landing page made by{" "}
-          <a
+          <Link
             rel="noreferrer noopener"
             target="_blank"
-            href="https://www.linkedin.com/in/leopoldo-miranda/"
+            href={AUTHOR_GITHUB_URL}
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Leo Miranda
-          </a>
+            {AUTHOR_NAME}
+          </Link>
         </h3>
       </section>
     </footer>

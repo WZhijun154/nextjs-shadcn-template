@@ -18,6 +18,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/dynamics";
+import { UI_TITLE } from "@/lib/utils";
+import Link from "next/link";
 
 interface RouteProps {
   href: string;
@@ -51,14 +53,14 @@ export const Navbar = () => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
-            <a
+            <Link
               rel="noreferrer noopener"
               href="/"
               className="ml-2 font-bold text-xl flex"
             >
               <LogoIcon />
-              ShadcnUI/Nextjs
-            </a>
+              {UI_TITLE}
+            </Link>
           </NavigationMenuItem>
 
           {/* mobile */}
@@ -83,7 +85,7 @@ export const Navbar = () => {
                 </SheetHeader>
                 <div className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
-                    <a
+                    <Link
                       rel="noreferrer noopener"
                       key={label}
                       href={href}
@@ -91,9 +93,9 @@ export const Navbar = () => {
                       className={buttonVariants({ variant: "ghost" })}
                     >
                       {label}
-                    </a>
+                    </Link>
                   ))}
-                  <a
+                  <Link
                     rel="noreferrer noopener"
                     href="https://github.com/leoMirandaa/shadcn-landing-page.git"
                     target="_blank"
@@ -103,7 +105,7 @@ export const Navbar = () => {
                   >
                     <GitHubLogoIcon className="mr-2 w-5 h-5" />
                     Github
-                  </a>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
@@ -112,7 +114,7 @@ export const Navbar = () => {
           {/* desktop */}
           <div className="hidden md:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
-              <a
+              <Link
                 rel="noreferrer noopener"
                 href={route.href}
                 key={i}
@@ -121,20 +123,20 @@ export const Navbar = () => {
                 })}`}
               >
                 {route.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="hidden md:flex gap-2">
-            <a
+            {/* <Link
               rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa/shadcn-landing-page.git"
+              href={AUTHOR_GITHUB_URL}
               target="_blank"
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >
               <GitHubLogoIcon className="mr-2 w-5 h-5" />
               Github
-            </a>
+            </Link> */}
 
             <ThemeSwitch />
           </div>
