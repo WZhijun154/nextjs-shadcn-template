@@ -6,6 +6,7 @@ import {
   AUTHOR_GITHUB_URL,
 } from "@/lib/utils";
 import Link from "next/link";
+import { TODAY_YEAR } from "@/lib/utils";
 
 export const Footer = () => {
   return (
@@ -28,7 +29,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Follow US</h3>
+          <h3 className="font-bold text-lg">Follow ME</h3>
           <div>
             <Link
               rel="noreferrer noopener"
@@ -48,16 +49,6 @@ export const Footer = () => {
               Twitter
             </Link>
           </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Dribbble
-            </Link>
-          </div>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -72,7 +63,7 @@ export const Footer = () => {
             </Link>
           </div>
 
-          <div>
+          {/* <div>
             <Link
               rel="noreferrer noopener"
               href="#"
@@ -90,7 +81,7 @@ export const Footer = () => {
             >
               Desktop
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-col gap-2">
@@ -124,6 +115,16 @@ export const Footer = () => {
               FAQ
             </Link>
           </div>
+
+          <div>
+            <Link
+              rel="noreferrer noopener"
+              href="#"
+              className="opacity-60 hover:opacity-100"
+            >
+              Feedback
+            </Link>
+          </div>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -137,32 +138,12 @@ export const Footer = () => {
               Youtube
             </Link>
           </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Discord
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Twitch
-            </Link>
-          </div>
         </div>
       </section>
 
       <section className="container pb-14 text-center">
         <h3>
-          &copy; 2024 Landing page made by{" "}
+          &copy; {TODAY_YEAR} {UI_TITLE} made by{" "}
           <Link
             rel="noreferrer noopener"
             target="_blank"

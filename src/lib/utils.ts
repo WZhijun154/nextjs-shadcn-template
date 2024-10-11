@@ -16,6 +16,8 @@ export const AUTHOR_GITHUB_URL = "https://github.com/WZhijun154";
 export const AUTHOR_AVATAR_URL =
   "https://avatars.githubusercontent.com/u/65524271?s=400&u=c3a2cdd11799add06a5259b00e9cfc7475b4da5d&v=4";
 export const AUTHOR_X_URL = "https://x.com/wangzhijun154";
+export const TODAY_YEAR = new Date().getFullYear();
+export const TODAY_DATE = new Date();
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
