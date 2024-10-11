@@ -1,10 +1,5 @@
 import { LogoIcon } from "@/components/icons";
-import {
-  UI_TITLE,
-  AUTHOR_NAME,
-  AUTHOR_X_URL,
-  AUTHOR_GITHUB_URL,
-} from "@/lib/utils";
+import { UI_TITLE } from "@/lib/utils";
 import Link from "next/link";
 import { TODAY_YEAR } from "@/lib/utils";
 
@@ -14,7 +9,7 @@ export const Footer = () => {
       id="footer"
       className="flex flex-col items-center bg-muted text-muted-foreground"
     >
-      <hr className="w-11/12 mx-auto" />
+      <hr className="w-full mx-auto" />
 
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
@@ -28,8 +23,8 @@ export const Footer = () => {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Follow ME</h3>
+        {/* <div className="flex flex-col gap-2">
+          <h3 className="font-bold text-lg">Follow me</h3>
           <div>
             <Link
               rel="noreferrer noopener"
@@ -49,7 +44,7 @@ export const Footer = () => {
               Twitter
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-lg">Platforms</h3>
@@ -128,7 +123,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Community</h3>
+          <h3 className="font-bold text-lg">Find more tools</h3>
           <div>
             <Link
               rel="noreferrer noopener"
@@ -143,15 +138,7 @@ export const Footer = () => {
 
       <section className="container pb-14 text-center">
         <h3>
-          &copy; {TODAY_YEAR} {UI_TITLE} made by{" "}
-          <Link
-            rel="noreferrer noopener"
-            target="_blank"
-            href={AUTHOR_GITHUB_URL}
-            className="text-primary transition-all border-primary hover:border-b-2"
-          >
-            {AUTHOR_NAME}
-          </Link>
+          &copy; {TODAY_YEAR} {UI_TITLE}. All rights reserved.
         </h3>
       </section>
     </footer>

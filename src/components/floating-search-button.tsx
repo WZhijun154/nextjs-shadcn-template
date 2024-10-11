@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/dynamics";
 import { Search } from "lucide-react";
 import React from "react";
 import {
@@ -12,7 +12,7 @@ import {
   CommandEmpty,
   CommandGroup,
   CommandItem,
-} from "@/components/ui/command";
+} from "@/components/dynamics";
 import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 

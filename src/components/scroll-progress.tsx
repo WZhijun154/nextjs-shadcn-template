@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Progress } from "@/components/ui/progress";
+import { Progress } from "@/components/dynamics";
 
 export function ScrollProgress() {
   const [scrollProgress, setScrollProgress] = useState(0);
