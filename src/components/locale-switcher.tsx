@@ -19,7 +19,7 @@ const languages = i18n.locales.map((locale) => {
   };
 });
 
-export function LocaleSelector() {
+export function LocaleSwitcher() {
   const pathname = usePathname();
   const redirectedPathname = (locale: Locale) => {
     if (!pathname) return "/";
@@ -30,7 +30,7 @@ export function LocaleSelector() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="w-9 px-0 justify-center items-center flex flex-row border-none">
+      <DropdownMenuTrigger className="w-9 rounded-lg px-0 py-2 justify-center items-center flex flex-row border-none">
         <Globe className="h-5 w-5" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-24">

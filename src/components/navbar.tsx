@@ -16,10 +16,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  LocaleSelector,
+  LocaleSwitcher,
 } from "@/components/dynamics";
 import { UI_TITLE } from "@/lib/utils-common";
 import Link from "next/link";
+// import { ScrollProgress } from "@/components/dynamics";
 interface RouteProps {
   href: string;
   label: string;
@@ -64,7 +65,7 @@ export const Navbar = () => {
 
           {/* mobile */}
           <span className="flex md:hidden items-center">
-            <LocaleSelector />
+            <LocaleSwitcher />
             <ThemeSwitch />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
@@ -137,7 +138,7 @@ export const Navbar = () => {
               Github
             </Link> */}
 
-            <LocaleSelector />
+            <LocaleSwitcher />
             <ThemeSwitch />
           </div>
         </NavigationMenuList>

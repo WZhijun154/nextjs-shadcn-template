@@ -8,6 +8,35 @@ html {
   scroll-behavior: smooth;
 }
 
+/* a perfect method to remove the shaking caused by the browser scrollbar */
+/* see  */
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+body {
+ width: 100vw;
+ overflow: hidden;
+}
+
+/* body {
+  width: calc( 100% );
+  max-width: calc( 100vw - 1em );
+} */
+
+/* ::-webkit-scrollbar { 
+  display: none; 
+} */
+
 /* body {
   font-family: Arial, Helvetica, sans-serif;
 } */
