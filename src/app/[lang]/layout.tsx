@@ -11,7 +11,7 @@ import {
 } from "@/components/dynamics";
 import { ProxyAgent, setGlobalDispatcher } from "undici";
 import { IS_PRODUCTION, SITE_URL } from "@/lib/utils-server-side";
-import { i18n, Locale } from "../../../i18n-config";
+import { i18n, Locale } from "@/lib/utils-common";
 
 // let server side fetch operations use proxy agent in development environment
 if (!IS_PRODUCTION) {
@@ -74,6 +74,10 @@ const searchItems = [
   { value: "duckduckgo", label: "DuckDuckGo" },
 ];
 
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
 interface RootLayoutProps {
   children: React.ReactNode;
   params: { lang: Locale };
@@ -100,8 +104,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
 }

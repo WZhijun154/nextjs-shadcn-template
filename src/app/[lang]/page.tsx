@@ -10,8 +10,16 @@ import { Sponsors } from "@/components/sponsors";
 import { Team } from "@/components/team";
 import { Testimonials } from "@/components/testimonials";
 import { Newsletter, ShadowBackground } from "@/components/dynamics";
+import { Locale } from "@/lib/utils-common";
+import { getDictionary } from "@/lib/dictionaries";
 
-export default function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const dictionary = await getDictionary(lang);
+  console.log(dictionary);
   return (
     <>
       <ShadowBackground />

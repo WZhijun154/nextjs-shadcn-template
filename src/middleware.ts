@@ -3,8 +3,7 @@ import type { NextRequest } from "next/server";
 
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import { getSanitizedPathname } from "./lib/utils-client-side";
-import { i18n } from "./../i18n-config";
+import { i18n } from "@/lib/utils-common";
 
 function getLocale(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -36,10 +35,12 @@ export function middleware(request: NextRequest) {
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
 
-    const sanitizedPathname = getSanitizedPathname(pathname);
-    request.nextUrl.pathname = `/${locale}/${sanitizedPathname}`;
-
-    return NextResponse.redirect(request.nextUrl);
+    return NextResponse.redirect(
+      new URL(
+        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+        request.url
+      )
+    );
   }
 
   return;
