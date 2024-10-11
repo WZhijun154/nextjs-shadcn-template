@@ -31,7 +31,7 @@ export default async function Home({
   params: { lang: Locale };
 }) {
   const dictionary = await getDictionary(lang);
-  console.log(dictionary);
+
   return (
     <>
       <ShadowBackground />
@@ -39,7 +39,7 @@ export default async function Home({
       <Sponsors />
       <About />
       <HowItWorks />
-      <Features />
+      <Features features={dictionary.landingPage.features} />
       <Services />
       <Cta />
       <Testimonials />

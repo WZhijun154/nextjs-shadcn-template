@@ -6,34 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-interface FeatureProps {
-  title: string;
-  description: string;
-  image: string;
-}
-
-const features: FeatureProps[] = [
-  {
-    title: "Responsive Design",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: "/looking-ahead.png",
-  },
-  {
-    title: "Intuitive user interface",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: "/reflecting.png",
-  },
-  {
-    title: "AI-Powered insights",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: "/growth.png",
-  },
-];
-
+import { FeatureProps } from "@/dictionaries/types";
 const featureList: string[] = [
   "Dark/Light theme",
   "Reviews",
@@ -46,7 +19,7 @@ const featureList: string[] = [
   "Minimalist",
 ];
 
-export const Features = () => {
+export const Features = ({ features }: { features: FeatureProps[] }) => {
   return (
     <section
       id="features"

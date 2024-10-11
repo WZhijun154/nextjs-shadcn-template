@@ -10,7 +10,10 @@ import {
 
 import { cn } from "@/lib/utils-common";
 
-const DropdownMenu = DropdownMenuPrimitive.Root;
+// see https://github.com/radix-ui/primitives/issues/346
+const DropdownMenu = (props: DropdownMenuPrimitive.DropdownMenuProps) => (
+  <DropdownMenuPrimitive.Root {...props} modal={false} />
+);
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 

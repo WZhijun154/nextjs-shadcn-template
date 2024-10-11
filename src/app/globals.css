@@ -8,9 +8,14 @@ html {
   scroll-behavior: smooth;
 }
 
+
+/* always show scrollbar */
+/* html {
+  overflow-y: scroll;
+} */
+
 /* a perfect method to remove the shaking caused by the browser scrollbar */
-/* see  */
-html {
+/* html {
   overflow-y: scroll;
 }
 
@@ -26,12 +31,13 @@ html {
 body {
  width: 100vw;
  overflow: hidden;
-}
+} */
 
-/* body {
+
+body {
   width: calc( 100% );
   max-width: calc( 100vw - 1em );
-} */
+}
 
 /* ::-webkit-scrollbar { 
   display: none; 

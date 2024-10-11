@@ -19,6 +19,8 @@ const languages = i18n.locales.map((locale) => {
   };
 });
 
+const needShowLocaleSwitcher = i18n.locales.length > 1;
+
 export function LocaleSwitcher() {
   const pathname = usePathname();
   const redirectedPathname = (locale: Locale) => {
@@ -27,6 +29,10 @@ export function LocaleSwitcher() {
     segments[1] = locale;
     return segments.join("/");
   };
+
+  if (!needShowLocaleSwitcher) {
+    return null;
+  }
 
   return (
     <DropdownMenu>
