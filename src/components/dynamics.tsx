@@ -544,3 +544,13 @@ export const DialogDescription = dynamic(
     ssr: true,
   }
 );
+
+export const LanguageSelector = dynamic(
+  () =>
+    import("@/components/language-selector").then(
+      (mod) => mod.LanguageSelector
+    ),
+  {
+    ssr: false,
+  }
+);

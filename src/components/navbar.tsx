@@ -6,7 +6,6 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { LogoIcon } from "@/components/icons";
@@ -17,10 +16,10 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  LanguageSelector,
 } from "@/components/dynamics";
 import { UI_TITLE } from "@/lib/utils";
 import Link from "next/link";
-
 interface RouteProps {
   href: string;
   label: string;
@@ -95,7 +94,7 @@ export const Navbar = () => {
                       {label}
                     </Link>
                   ))}
-                  <Link
+                  {/* <Link
                     rel="noreferrer noopener"
                     href="https://github.com/leoMirandaa/shadcn-landing-page.git"
                     target="_blank"
@@ -105,7 +104,8 @@ export const Navbar = () => {
                   >
                     <GitHubLogoIcon className="mr-2 w-5 h-5" />
                     Github
-                  </Link>
+                  </Link> */}
+                  <LanguageSelector />
                 </div>
               </SheetContent>
             </Sheet>
@@ -127,7 +127,7 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex gap-2">
+          <div className="hidden md:flex gap-2 items-center">
             {/* <Link
               rel="noreferrer noopener"
               href={AUTHOR_GITHUB_URL}
@@ -138,6 +138,7 @@ export const Navbar = () => {
               Github
             </Link> */}
 
+            <LanguageSelector />
             <ThemeSwitch />
           </div>
         </NavigationMenuList>
