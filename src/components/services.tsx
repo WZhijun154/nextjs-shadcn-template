@@ -4,71 +4,47 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MagnifierIcon, WalletIcon, ChartIcon } from "@/components/icons";
+import { getDictionary } from "@/lib/dictionaries";
+import { Locale } from "@/lib/utils-common";
 
-interface ServiceProps {
-  title: string;
-  description: string;
-  icon: JSX.Element;
-}
-
-const serviceList: ServiceProps[] = [
-  {
-    title: "Code Collaboration",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <ChartIcon />,
-  },
-  {
-    title: "Project Management",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <WalletIcon />,
-  },
-  {
-    title: "Task Automation",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <MagnifierIcon />,
-  },
-];
-
-export const Services = () => {
+export const Services = async ({ lang }: { lang: Locale }) => {
+  const dictionary = await getDictionary(lang);
   return (
     <section className="container custom-section-padding">
       <div className="grid lg:grid-cols-[1fr,1fr] gap-8 place-items-center">
         <div>
           <h2 className="custom-h2">
-            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+            {/* <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
               Client-Centric{" "}
             </span>
-            Services
+            Services */}
+            {dictionary.landingPage.services.h2}
           </h2>
 
-          <p className="custom-muted-description custom-margin-after-title mb-8 ">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-            dolor.
+          <p className="custom-muted-description custom-margin-after-title">
+            {dictionary.landingPage.services.description}
           </p>
 
-          <div className="flex flex-col gap-8">
-            {serviceList.map(({ icon, title, description }: ServiceProps) => (
-              <Card key={title}>
-                <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
-                  <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
-                    {icon}
-                  </div>
-                  <div>
-                    <CardTitle>{title}</CardTitle>
-                    <CardDescription className="text-md mt-2">
-                      {description}
-                    </CardDescription>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
+          <div className="flex flex-col gap-8 custom-margin-after-description">
+            {dictionary.landingPage.services.items.map(
+              ({ h3, description, icon }) => (
+                <Card key={h3}>
+                  <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
+                    <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
+                      {icon}
+                    </div>
+                    <div>
+                      <CardTitle>{h3}</CardTitle>
+                      <CardDescription className="text-md mt-2">
+                        {description}
+                      </CardDescription>
+                    </div>
+                  </CardHeader>
+                </Card>
+              )
+            )}
           </div>
         </div>
-
         <img
           src="/cube-leg.png"
           className="w-[300px] md:w-[500px] lg:w-[600px] object-contain"

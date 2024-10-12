@@ -4,78 +4,33 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/dynamics";
-import Link from "next/link";
-interface FAQProps {
-  question: string;
-  answer: string;
-  value: string;
-}
 
-const FAQList: FAQProps[] = [
-  {
-    question: "Is this template free?",
-    answer: "Yes. It is a free ChadcnUI template.",
-    value: "item-1",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
-    value: "item-2",
-  },
-  {
-    question:
-      "Lorem ipsum dolor sit amet  Consectetur natus dolores minus quibusdam?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis necessitatibus maxime quis ipsa vitae cumque quo?",
-    value: "item-3",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    value: "item-4",
-  },
-  {
-    question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
-    value: "item-5",
-  },
-];
+import { Locale } from "@/lib/utils-common";
+import { getDictionary } from "@/lib/dictionaries";
 
-export const FAQ = () => {
+export const FAQ = async ({ lang }: { lang: Locale }) => {
+  const dictionary = await getDictionary(lang);
+
   return (
     <section id="faq" className="container custom-section-padding">
       <h2 className="custom-h2">
-        Frequently Asked{" "}
+        {/* Frequently Asked{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Questions
-        </span>
+        </span> */}
+        {dictionary.landingPage.faq.h2}
       </h2>
 
       <Accordion type="single" collapsible className="w-full">
-        {FAQList.map(({ question, answer, value }: FAQProps) => (
+        {dictionary.landingPage.faq.items.map(({ h3, h4, value }) => (
           <AccordionItem key={value} value={value}>
-            <AccordionTrigger className="text-left">
-              {question}
-            </AccordionTrigger>
+            <AccordionTrigger className="text-left">{h3}</AccordionTrigger>
 
-            <AccordionContent>{answer}</AccordionContent>
+            <AccordionContent>{h4}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
-
-      <h3 className="font-medium mt-4">
-        Still have questions?{" "}
-        <Link
-          rel="noreferrer noopener"
-          href="#"
-          className="text-primary transition-all border-primary hover:border-b-2"
-        >
-          Contact us
-        </Link>
-      </h3>
+      {dictionary.contactUs}
     </section>
   );
 };

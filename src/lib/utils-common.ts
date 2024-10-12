@@ -8,8 +8,8 @@ export function cn(...inputs: ClassValue[]) {
 export const UI_TITLE = "ShadcnUI/Nextjs";
 
 export const i18n = {
-  locales: ["ja", "en"],
-  defaultLocale: "ja",
+  locales: ["en", "ja"],
+  defaultLocale: "en",
 } as const;
 
 export type Locale = (typeof i18n)["locales"][number];

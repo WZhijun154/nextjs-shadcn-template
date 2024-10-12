@@ -9,91 +9,11 @@ import {
 } from "@/components/ui/card";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
-interface TeamProps {
-  imageUrl: string;
-  name: string;
-  position: string;
-  socialNetworks: SociaNetworkslProps[];
-}
+import { Locale } from "@/lib/utils-common";
+import { getDictionary } from "@/lib/dictionaries";
 
-interface SociaNetworkslProps {
-  name: string;
-  url: string;
-}
-
-const teamList: TeamProps[] = [
-  {
-    imageUrl: "https://i.pravatar.cc/150?img=35",
-    name: "Emma Smith",
-    position: "Product Manager",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-      {
-        name: "Facebook",
-        url: "https://www.facebook.com/",
-      },
-      {
-        name: "Instagram",
-        url: "https://www.instagram.com/",
-      },
-    ],
-  },
-  {
-    imageUrl: "https://i.pravatar.cc/150?img=60",
-    name: "John Doe",
-    position: "Tech Lead",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-      {
-        name: "Facebook",
-        url: "https://www.facebook.com/",
-      },
-      {
-        name: "Instagram",
-        url: "https://www.instagram.com/",
-      },
-    ],
-  },
-  {
-    imageUrl: "https://i.pravatar.cc/150?img=36",
-    name: "Ashley Ross",
-    position: "Frontend Developer",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-
-      {
-        name: "Instagram",
-        url: "https://www.instagram.com/",
-      },
-    ],
-  },
-  {
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Bruce Rogers",
-    position: "Backend Developer",
-    socialNetworks: [
-      {
-        name: "Linkedin",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
-      },
-      {
-        name: "Facebook",
-        url: "https://www.facebook.com/",
-      },
-    ],
-  },
-];
-
-export const Team = () => {
+export const Team = async ({ lang }: { lang: Locale }) => {
+  const dictionary = await getDictionary(lang);
   const socialIcon = (iconName: string) => {
     switch (iconName) {
       case "Linkedin":
@@ -110,27 +30,27 @@ export const Team = () => {
   return (
     <section id="team" className="container custom-section-padding">
       <h2 className="custom-h2">
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+        {/* <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Our Dedicated{" "}
         </span>
-        Crew
+        Crew */}
+        {dictionary.landingPage.team.h2}
       </h2>
 
-      <p className="custom-margin-after-title mb-10 custom-muted-description">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        dolor pariatur sit!
+      <p className="custom-margin-after-title custom-muted-description">
+        {dictionary.landingPage.team.description}
       </p>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-10">
-        {teamList.map(
-          ({ imageUrl, name, position, socialNetworks }: TeamProps) => (
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-10 custom-margin-after-description pt-2">
+        {dictionary.landingPage.team.items.map(
+          ({ image, name, position, socialNetworks, description }) => (
             <Card
               key={name}
               className="bg-muted/50 relative mt-8 flex flex-col justify-center items-center"
             >
               <CardHeader className="mt-8 flex justify-center items-center pb-2">
                 <img
-                  src={imageUrl}
+                  src={image}
                   alt={`${name} ${position}`}
                   className="absolute -top-12 rounded-full w-24 h-24 aspect-square object-cover"
                 />
@@ -141,11 +61,11 @@ export const Team = () => {
               </CardHeader>
 
               <CardContent className="text-center pb-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>{description}</p>
               </CardContent>
 
               <CardFooter>
-                {socialNetworks.map(({ name, url }: SociaNetworkslProps) => (
+                {socialNetworks.map(({ name, url }) => (
                   <div key={name}>
                     <Link
                       rel="noreferrer noopener"

@@ -94,14 +94,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all duration-300 border-red-500`}
       >
         <Providers>
+          {/* UI */}
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <Toaster closeButton richColors />
+          {/* Fixed */}
           <ScrollProgress />
           <ScrollToTop />
           <FloatingSearchButton items={searchItems} />
-
+          {/* Functional */}
+          <Toaster closeButton richColors />
           <GoogleTag gtagId="G-XXXXXXX" />
         </Providers>
       </body>

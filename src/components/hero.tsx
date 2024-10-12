@@ -1,12 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { HeroCards } from "@/components/hero-cards";
+import { getDictionary } from "@/lib/dictionaries";
+import { Locale } from "@/lib/utils-common";
 
-export const Hero = () => {
+export const Hero = async ({ lang }: { lang: Locale }) => {
+  const dictionary = await getDictionary(lang);
+
   return (
     <section className="container grid lg:grid-cols-2 place-items-center pt-20 pb-16 md:pt-32 md:pb-24 gap-10">
       <div className="text-center lg:text-start space-y-6">
         <div className="custom-h1">
-          <h1 className="inline">
+          {/* <h1 className="inline">
             <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
               Shadcn
             </span>{" "}
@@ -19,12 +23,12 @@ export const Hero = () => {
               Nextjs
             </span>{" "}
             developers
-          </h2>
+          </h2> */}
+          <h1>{dictionary.landingPage.hero.h1}</h1>
         </div>
 
         <p className="custom-muted-description md:w-10/12 mx-auto lg:mx-0">
-          Build your Nextjs landing page effortlessly with the required sections
-          to your project.
+          {dictionary.landingPage.hero.description}
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
