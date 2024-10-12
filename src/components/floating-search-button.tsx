@@ -14,7 +14,7 @@ import {
   CommandItem,
 } from "@/components/dynamics";
 import { Check } from "lucide-react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 interface SearchItem {
   value: string;
@@ -25,7 +25,7 @@ export function FloatingSearchButton({ items }: { items: SearchItem[] }) {
   const [open, setOpen] = React.useState(false);
   const [currentValue, setCurrentValue] = React.useState("");
   const placeholder = "domain name";
-  const router = useRouter();
+  // const router = useRouter();
   const emptyMessage = "No results found";
 
   const renderContent = () => (
@@ -41,7 +41,7 @@ export function FloatingSearchButton({ items }: { items: SearchItem[] }) {
               onSelect={() => {
                 setCurrentValue(item.value);
                 setOpen(false);
-                router.push(`/${item.value}`);
+                // router.push(`/${item.value}`);
               }}
             >
               <Check
@@ -63,7 +63,7 @@ export function FloatingSearchButton({ items }: { items: SearchItem[] }) {
       <Button
         variant="default"
         size="icon"
-        className="fixed bg-primary/80 top-24 right-4 md:right-6 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary/90 hover:shadow-xl"
+        className=" fixed bg-primary/80 top-24 right-4 md:right-6 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary/90 hover:shadow-xl"
         aria-label="Search"
         onClick={() => setOpen(!open)}
       >

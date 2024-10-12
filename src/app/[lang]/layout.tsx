@@ -7,11 +7,12 @@ import {
   Navbar,
   Toaster,
   ScrollToTop,
-  // FloatingSearchButton,
+  FloatingSearchButton,
 } from "@/components/dynamics";
 import { ProxyAgent, setGlobalDispatcher } from "undici";
 import { IS_PRODUCTION, SITE_URL } from "@/lib/utils-server-side";
 import { i18n, Locale } from "@/lib/utils-common";
+import { ScrollProgress } from "@/components/dynamics";
 
 // let server side fetch operations use proxy agent in development environment
 if (!IS_PRODUCTION) {
@@ -68,11 +69,11 @@ const GoogleTag = ({ gtagId }: { gtagId: string }) => {
   );
 };
 
-// const searchItems = [
-//   { value: "google", label: "Google" },
-//   { value: "bing", label: "Bing" },
-//   { value: "duckduckgo", label: "DuckDuckGo" },
-// ];
+const searchItems = [
+  { value: "google", label: "Google" },
+  { value: "bing", label: "Bing" },
+  { value: "duckduckgo", label: "DuckDuckGo" },
+];
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -90,15 +91,17 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all duration-300`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all duration-300 border-red-500`}
       >
         <Providers>
           <Navbar />
-          {/* <FloatingSearchButton items={searchItems} /> */}
           <main>{children}</main>
           <Footer />
-          <ScrollToTop />
           <Toaster closeButton richColors />
+          <ScrollProgress />
+          <ScrollToTop />
+          <FloatingSearchButton items={searchItems} />
+
           <GoogleTag gtagId="G-XXXXXXX" />
         </Providers>
       </body>
