@@ -552,3 +552,10 @@ export const LocaleSwitcher = dynamic(
     ssr: true,
   }
 );
+
+export const Combobox = dynamic(
+  () => import("@/components/ui/combobox").then((mod) => mod.Combobox),
+  {
+    ssr: true,
+  }
+);
