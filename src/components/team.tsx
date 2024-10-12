@@ -11,6 +11,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Locale } from "@/lib/utils-common";
 import { getDictionary } from "@/lib/dictionaries";
+import { Section } from "@/components/section";
 
 export const Team = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
@@ -28,7 +29,7 @@ export const Team = async ({ lang }: { lang: Locale }) => {
   };
 
   return (
-    <section id="team" className="container custom-section-padding">
+    <Section id="team">
       <h2 className="custom-h2">
         {/* <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Our Dedicated{" "}
@@ -86,6 +87,6 @@ export const Team = async ({ lang }: { lang: Locale }) => {
           )
         )}
       </div>
-    </section>
+    </Section>
   );
 };

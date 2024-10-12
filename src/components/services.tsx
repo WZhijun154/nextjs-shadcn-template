@@ -7,10 +7,12 @@ import {
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
 
+import { Section } from "@/components/section";
+
 export const Services = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
   return (
-    <section className="container custom-section-padding">
+    <Section>
       <div className="grid lg:grid-cols-[1fr,1fr] gap-8 place-items-center">
         <div>
           <h2 className="custom-h2">
@@ -51,6 +53,6 @@ export const Services = async ({ lang }: { lang: Locale }) => {
           alt="About services"
         />
       </div>
-    </section>
+    </Section>
   );
 };

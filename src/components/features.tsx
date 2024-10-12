@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Section } from "@/components/section";
 // const featureList: string[] = [
 //   "Dark/Light theme",
 //   "Reviews",
@@ -23,7 +24,7 @@ import { Locale } from "@/lib/utils-common";
 export const Features = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
   return (
-    <section id="features" className="container custom-section-padding">
+    <Section id="features">
       <h2 className="custom-h2 md:text-center">
         {/* Many{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
@@ -67,6 +68,6 @@ export const Features = async ({ lang }: { lang: Locale }) => {
           )
         )}
       </div>
-    </section>
+    </Section>
   );
 };

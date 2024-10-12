@@ -91,12 +91,12 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all duration-300 border-red-500`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-all duration-300`}
       >
         <Providers>
           {/* UI */}
           <Navbar />
-          <main>{children}</main>
+          <main className="min-h-[60vh]">{children}</main>
           <Footer />
           {/* Fixed */}
           <ScrollProgress />

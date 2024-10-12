@@ -8,6 +8,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/dynamics";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
+import { Section } from "@/components/section";
 
 interface TestimonialProps {
   image: string;
@@ -19,7 +20,7 @@ interface TestimonialProps {
 export const Testimonials = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
   return (
-    <section id="testimonials" className="container custom-section-padding">
+    <Section id="testimonials">
       <h2 className="custom-h2">
         Discover Why
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
@@ -57,6 +58,6 @@ export const Testimonials = async ({ lang }: { lang: Locale }) => {
           )
         )}
       </div>
-    </section>
+    </Section>
   );
 };

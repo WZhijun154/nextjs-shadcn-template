@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
+import { UniqueSection } from "@/components/section";
 
 export const Cta = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
   return (
-    <section id="cta" className="bg-muted/50 custom-section-padding">
+    <UniqueSection id="cta" className="bg-muted/70">
       <div className="container lg:grid lg:grid-cols-2 place-items-center">
         <div className="lg:col-start-1">
           <h2 className="custom-h2">
@@ -23,14 +24,12 @@ export const Cta = async ({ lang }: { lang: Locale }) => {
         </div>
 
         <div className="space-y-4 lg:col-start-2">
-          <Button className="w-full md:mr-4 md:w-auto">
-            {dictionary.landingPage.cta.requestDemoButton}
-          </Button>
+          <Button className="w-full md:mr-4 md:w-auto">Request a Demo</Button>
           <Button variant="outline" className="w-full md:w-auto">
-            {dictionary.landingPage.cta.viewAllFeaturesButton}
+            View all features
           </Button>
         </div>
       </div>
-    </section>
+    </UniqueSection>
   );
 };

@@ -1,14 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
+import { Section } from "@/components/section";
 
 export const HowItWorks = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
   return (
-    <section
-      id="howItWorks"
-      className="container text-center custom-section-padding"
-    >
+    <Section id="howItWorks" className="text-center">
       <h2 className="custom-h2">
         {/* How It{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
@@ -36,6 +34,6 @@ export const HowItWorks = async ({ lang }: { lang: Locale }) => {
           )
         )}
       </div>
-    </section>
+    </Section>
   );
 };
