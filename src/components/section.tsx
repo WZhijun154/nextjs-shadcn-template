@@ -50,7 +50,10 @@ export function TopSection({
   return (
     <section
       id={id}
-      className={cn("container custom-section-padding", className)}
+      className={cn(
+        "bg-gradient-primary-light dark:bg-gradient-primary-dark custom-top-section-padding",
+        className
+      )}
     >
       {children}
     </section>

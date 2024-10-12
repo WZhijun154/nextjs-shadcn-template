@@ -14,4 +14,5 @@ export type Locale = (typeof i18n)["locales"][number];
 export const localeNames: { [key: string]: string } = {
   en: "English",
   ja: "日本語",
+  zh: "中文",
 };

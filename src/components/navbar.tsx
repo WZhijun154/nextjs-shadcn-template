@@ -51,7 +51,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* <ScrollProgress /> */}
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
+        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between items-center relative">
           <NavigationMenuItem className="font-bold flex">
             <Link
               rel="noreferrer noopener"
@@ -95,24 +95,13 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
                       {label}
                     </Link>
                   ))}
-                  {/* <Link
-                    rel="noreferrer noopener"
-                    href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                    target="_blank"
-                    className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
-                    })}`}
-                  >
-                    <GitHubLogoIcon className="mr-2 w-5 h-5" />
-                    Github
-                  </Link> */}
                 </div>
               </SheetContent>
             </Sheet>
           </span>
 
           {/* desktop */}
-          <div className="hidden md:flex gap-2">
+          <div className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">
             {routeList.map((route: RouteProps, i) => (
               <Link
                 rel="noreferrer noopener"

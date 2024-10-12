@@ -10,7 +10,7 @@ import { Services } from "@/components/services";
 import { Team } from "@/components/team";
 import { Testimonials } from "@/components/testimonials";
 // import { Newsletter, ShadowBackground } from "@/components/dynamics";
-import { ShadowBackground } from "@/components/shadow-background";
+// import { ShadowBackground } from "@/components/shadow-background";
 import { Locale } from "@/lib/utils-common";
 import { getDictionary } from "@/lib/dictionaries";
 
@@ -33,7 +33,7 @@ export default async function Home({
 }) {
   return (
     <>
-      <ShadowBackground />
+      {/* <ShadowBackground /> */}
       <Hero lang={lang} />
       {/* <Sponsors /> */}
       {/* <About /> */}
