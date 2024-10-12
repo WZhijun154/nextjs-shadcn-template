@@ -4,11 +4,8 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
-export const UI_TITLE = "ShadcnUI/Nextjs";
-
 export const i18n = {
-  locales: ["en", "ja"],
+  locales: ["en"],
   defaultLocale: "en",
 } as const;
 

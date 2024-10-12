@@ -18,9 +18,9 @@ import {
   SheetTrigger,
   LocaleSwitcher,
 } from "@/components/dynamics";
-import { UI_TITLE } from "@/lib/utils-common";
 import Link from "next/link";
 // import { ScrollProgress } from "@/components/dynamics";
+import { Dictionary } from "@/lib/dictionaries";
 interface RouteProps {
   href: string;
   label: string;
@@ -45,7 +45,7 @@ const routeList: RouteProps[] = [
   },
 ];
 
-export const Navbar = () => {
+export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -59,7 +59,7 @@ export const Navbar = () => {
               className="ml-2 font-bold text-xl flex"
             >
               <LogoIcon />
-              {UI_TITLE}
+              {dictionary.brandName}
             </Link>
           </NavigationMenuItem>
 

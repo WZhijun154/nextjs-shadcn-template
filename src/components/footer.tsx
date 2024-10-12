@@ -1,9 +1,10 @@
 import { LogoIcon } from "@/components/icons";
-import { UI_TITLE } from "@/lib/utils-common";
 import Link from "next/link";
-import { TODAY_YEAR } from "@/lib/utils-server-side";
+import { getDictionary } from "@/lib/dictionaries";
+import { Locale } from "@/lib/utils-common";
 
-export const Footer = () => {
+export const Footer = async ({ lang }: { lang: Locale }) => {
+  const dictionary = await getDictionary(lang);
   return (
     <footer
       id="footer"
@@ -18,127 +19,26 @@ export const Footer = () => {
             className="font-bold text-xl flex"
           >
             <LogoIcon />
-            {UI_TITLE}
+            {dictionary.brandName}
           </Link>
         </div>
 
-        {/* <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Follow me</h3>
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href={AUTHOR_GITHUB_URL}
-              className="opacity-60 hover:opacity-100"
-            >
-              Github
-            </Link>
+        {dictionary.footer.subSections.map((subSection) => (
+          <div key={subSection.h3} className="flex flex-col gap-2">
+            <h3 className="font-bold text-lg">{subSection.h3}</h3>
+            {subSection.items.map((item) => (
+              <div key={item.label}>
+                <Link href={item.href} className="opacity-60 hover:opacity-100">
+                  {item.label}
+                </Link>
+              </div>
+            ))}
           </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href={AUTHOR_X_URL}
-              className="opacity-60 hover:opacity-100"
-            >
-              Twitter
-            </Link>
-          </div>
-        </div> */}
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Platforms</h3>
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Web
-            </Link>
-          </div>
-
-          {/* <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Mobile
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Desktop
-            </Link>
-          </div> */}
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">About</h3>
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Features
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Pricing
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              FAQ
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Feedback
-            </Link>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Find more tools</h3>
-          <div>
-            <Link
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Youtube
-            </Link>
-          </div>
-        </div>
+        ))}
       </section>
 
       <section className="container pb-14 text-center">
-        <h3>
-          &copy; {TODAY_YEAR} {UI_TITLE}. All rights reserved.
-        </h3>
+        <h3>{dictionary.footer.copyright}</h3>
       </section>
     </footer>
   );

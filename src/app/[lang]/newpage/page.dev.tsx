@@ -1,5 +1,6 @@
 import { Locale } from "@/lib/utils-common";
 import { getDictionary } from "@/lib/dictionaries";
+import { Section } from "@/components/section";
 
 export async function generateMetadata({
   params: { lang },
@@ -20,5 +21,11 @@ export default async function NewPageDev({
   params: { lang: Locale };
 }) {
   const dictionary = await getDictionary(lang);
-  return <>{dictionary.landingPage.hero.h1}</>;
+  return (
+    <Section>
+      <h1 className="custom-h1 text-center">
+        {dictionary.landingPage.hero.h1}
+      </h1>
+    </Section>
+  );
 }

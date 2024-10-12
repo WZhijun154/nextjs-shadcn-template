@@ -1,7 +1,11 @@
 import { Medal, Map, Plane, Gift, ChartBar, Wallet, Boxes } from "lucide-react";
 import Link from "next/link";
+import { TODAY_YEAR } from "@/lib/utils-server-side";
+
+const brandName = "ShadcnUI/Nextjs";
 
 export const en = {
+  brandName: brandName,
   landingPage: {
     metadata: {
       title: "Homepage Title",
@@ -292,4 +296,44 @@ export const en = {
       </Link>
     </p>
   ),
+  footer: {
+    subSections: [
+      {
+        h3: "Platforms",
+        items: [
+          {
+            label: "Web",
+            href: "/",
+          },
+        ],
+      },
+      {
+        h3: "About",
+        items: [
+          {
+            label: "Features",
+            href: "/en#features",
+          },
+          {
+            label: "Pricing",
+            href: "/en#pricing",
+          },
+          {
+            label: "FAQ",
+            href: "/en#faq",
+          },
+        ],
+      },
+      {
+        h3: "Find more tools",
+        items: [
+          {
+            label: "Youtube",
+            href: "https://www.youtube.com/",
+          },
+        ],
+      },
+    ],
+    copyright: `&copy; ${TODAY_YEAR} ${brandName}. All rights reserved.`,
+  },
 };

@@ -13,6 +13,7 @@ import { ProxyAgent, setGlobalDispatcher } from "undici";
 import { IS_PRODUCTION, SITE_URL } from "@/lib/utils-server-side";
 import { i18n, Locale } from "@/lib/utils-common";
 import { ScrollProgress } from "@/components/dynamics";
+import { getDictionary } from "@/lib/dictionaries";
 
 // let server side fetch operations use proxy agent in development environment
 if (!IS_PRODUCTION) {
@@ -84,10 +85,11 @@ interface RootLayoutProps {
   params: { lang: Locale };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { lang },
 }: Readonly<RootLayoutProps>) {
+  const dictionary = await getDictionary(lang);
   return (
     <html lang={lang}>
       <body
@@ -95,9 +97,9 @@ export default function RootLayout({
       >
         <Providers>
           {/* UI */}
-          <Navbar />
+          <Navbar dictionary={dictionary} />
           <main className="min-h-[60vh]">{children}</main>
-          <Footer />
+          <Footer lang={lang} />
           {/* Fixed */}
           <ScrollProgress />
           <ScrollToTop />
