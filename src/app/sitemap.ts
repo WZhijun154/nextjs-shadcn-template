@@ -8,7 +8,7 @@ export default function sitemap() {
   const current = TODAY_DATE.toISOString().split("T")[0];
   return [
     {
-      url: `${SITE_URL}/`,
+      url: `${SITE_URL}`,
       lastModified: current,
     },
   ];

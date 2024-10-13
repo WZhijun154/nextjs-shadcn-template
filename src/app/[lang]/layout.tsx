@@ -48,7 +48,7 @@ const geistMono = localFont({
 });
 
 const GoogleTag = () => {
-  if (GTAG_ID === "not-set") return null;
+  if (GTAG_ID === "NOT_SET") return null;
   return (
     <div className="hidden">
       <Script

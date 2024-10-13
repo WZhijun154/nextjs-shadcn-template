@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
-import { TopSection } from "@/components/section";
+import { GradientSection } from "@/components/section";
 
 export const Hero = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
 
   return (
-    <TopSection id="hero" className="flex flex-col items-center justify-center">
+    <GradientSection
+      id="hero"
+      className="flex flex-col items-center justify-center"
+    >
       <div className="text-center lg:text-start space-y-6 flex flex-col items-center justify-center">
         <div className="custom-h1">
           {/* <h1 className="inline">
@@ -43,6 +46,6 @@ export const Hero = async ({ lang }: { lang: Locale }) => {
 
       {/* Shadow effect */}
       <div className="shadow"></div>
-    </TopSection>
+    </GradientSection>
   );
 };

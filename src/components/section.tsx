@@ -38,7 +38,7 @@ export function UniqueSection({
   );
 }
 
-export function TopSection({
+export function GradientSection({
   id,
   children,
   className,

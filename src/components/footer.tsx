@@ -38,7 +38,7 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
       </section>
 
       <section className="container pb-14 text-center">
-        <h3>{dictionary.footer.copyright}</h3>
+        &copy; <h3 className="inline">{dictionary.footer.copyright}</h3>
       </section>
     </footer>
   );

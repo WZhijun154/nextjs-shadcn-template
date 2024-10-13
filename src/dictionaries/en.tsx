@@ -335,7 +335,7 @@ export const en = {
         ],
       },
     ],
-    copyright: `&copy; ${TODAY_YEAR} ${brandName}. All rights reserved.`,
+    copyright: `${TODAY_YEAR} ${brandName}. All rights reserved.`,
   },
   navbar: {
     RouteList: [
