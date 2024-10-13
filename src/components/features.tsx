@@ -19,7 +19,7 @@ export const Features = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
   return (
     <Section id="features">
-      <h2 className="custom-h2 md:text-center">
+      <h2 className="custom-h2 text-center">
         {/* Many{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Great Features

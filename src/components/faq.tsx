@@ -20,8 +20,15 @@ export const FAQ = async ({ lang }: { lang: Locale }) => {
         </span> */}
         {dictionary.landingPage.faq.h2}
       </h2>
+      <p className="custom-muted-description custom-margin-after-title">
+        {dictionary.landingPage.faq.description}
+      </p>
 
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full custom-margin-after-description"
+      >
         {dictionary.landingPage.faq.items.map(({ h3, h4, value }) => (
           <AccordionItem key={value} value={value}>
             <AccordionTrigger className="text-left">{h3}</AccordionTrigger>

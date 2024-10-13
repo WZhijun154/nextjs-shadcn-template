@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
 import { UniqueSection } from "@/components/section";
+import Link from "next/link";
 
 export const Cta = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
@@ -24,9 +25,15 @@ export const Cta = async ({ lang }: { lang: Locale }) => {
         </div>
 
         <div className="space-y-4 lg:col-start-2">
-          <Button className="w-full md:mr-4 md:w-auto">Request a Demo</Button>
+          <Button className="w-full md:mr-4 md:w-auto">
+            <Link href={`/${lang}#request-demo`}>
+              {dictionary.landingPage.cta.requestDemoButton}
+            </Link>
+          </Button>
           <Button variant="outline" className="w-full md:w-auto">
-            View all features
+            <Link href={`/${lang}#features`}>
+              {dictionary.landingPage.cta.viewAllFeaturesButton}
+            </Link>
           </Button>
         </div>
       </div>

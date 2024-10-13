@@ -9,7 +9,7 @@ export const en = {
   brandName: brandName,
   landingPage: {
     metadata: {
-      title: `Homepage Title | ${brandName}`,
+      title: `Homepage Title`,
       description: "Homepage Description",
     },
     hero: {
@@ -256,6 +256,7 @@ export const en = {
     },
     faq: {
       h2: "Frequently Asked Questions",
+      description: "Find answers to common questions about ...",
       items: [
         {
           h3: "Is this template free?",
@@ -315,25 +316,25 @@ export const en = {
             label: "Features",
             href: `/${lang}#features`,
           },
-          {
-            label: "Pricing",
-            href: `/${lang}#pricing`,
-          },
+          // {
+          //   label: "Pricing",
+          //   href: `/${lang}#pricing`,
+          // },
           {
             label: "FAQ",
             href: `/${lang}#faq`,
           },
         ],
       },
-      {
-        category: "Find more tools",
-        items: [
-          {
-            label: "Youtube",
-            href: "https://www.youtube.com/",
-          },
-        ],
-      },
+      // {
+      //   category: "Find more tools",
+      //   items: [
+      //     {
+      //       label: "Youtube",
+      //       href: "https://www.youtube.com/",
+      //     },
+      //   ],
+      // },
     ],
     copyright: `${TODAY_YEAR} ${brandName}. All rights reserved.`,
   },
@@ -343,18 +344,22 @@ export const en = {
         href: `/${lang}#features`,
         label: "Features",
       },
-      {
-        href: `/${lang}#testimonials`,
-        label: "Testimonials",
-      },
-      {
-        href: `/${lang}#pricing`,
-        label: "Pricing",
-      },
+      // {
+      //   href: `/${lang}#testimonials`,
+      //   label: "Testimonials",
+      // },
+      // {
+      //   href: `/${lang}#pricing`,
+      //   label: "Pricing",
+      // },
       {
         href: `/${lang}#faq`,
         label: "FAQ",
       },
     ],
+  },
+  comingSoon: {
+    h2: "Coming Soon",
+    description: "We are working hard to bring you this feature. Stay tuned!",
   },
 };

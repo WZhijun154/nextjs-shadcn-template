@@ -7,7 +7,7 @@ import {
   Navbar,
   Toaster,
   ScrollToTop,
-  FloatingSearchButton,
+  // FloatingSearchButton,
 } from "@/components/dynamics";
 import { ProxyAgent, setGlobalDispatcher } from "undici";
 import { IS_PRODUCTION, SITE_URL, GTAG_ID } from "@/lib/utils-server-side";
@@ -71,11 +71,11 @@ const GoogleTag = () => {
   );
 };
 
-const searchItems = [
-  { value: "google", label: "Google" },
-  { value: "bing", label: "Bing" },
-  { value: "duckduckgo", label: "DuckDuckGo" },
-];
+// const searchItems = [
+//   { value: "google", label: "Google" },
+//   { value: "bing", label: "Bing" },
+//   { value: "duckduckgo", label: "DuckDuckGo" },
+// ];
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -104,7 +104,7 @@ export default async function RootLayout({
           {/* Fixed */}
           <ScrollProgress />
           <ScrollToTop />
-          <FloatingSearchButton items={searchItems} />
+          {/* <FloatingSearchButton items={searchItems} /> */}
           {/* Functional */}
           <Toaster closeButton richColors />
           <GoogleTag />
