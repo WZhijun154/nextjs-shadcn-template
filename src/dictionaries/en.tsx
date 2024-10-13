@@ -300,7 +300,7 @@ export const en = {
   footer: {
     subSections: [
       {
-        h3: "Platforms",
+        category: "Platforms",
         items: [
           {
             label: "Web",
@@ -309,7 +309,7 @@ export const en = {
         ],
       },
       {
-        h3: "About",
+        category: "About",
         items: [
           {
             label: "Features",
@@ -326,7 +326,7 @@ export const en = {
         ],
       },
       {
-        h3: "Find more tools",
+        category: "Find more tools",
         items: [
           {
             label: "Youtube",

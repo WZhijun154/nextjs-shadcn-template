@@ -24,8 +24,8 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
         </div>
 
         {dictionary.footer.subSections.map((subSection) => (
-          <div key={subSection.h3} className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">{subSection.h3}</h3>
+          <div key={subSection.category} className="flex flex-col gap-2">
+            <p className="font-bold text-lg">{subSection.category}</p>
             {subSection.items.map((item) => (
               <div key={item.label}>
                 <Link href={item.href} className="opacity-60 hover:opacity-100">
@@ -38,7 +38,7 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
       </section>
 
       <section className="container pb-14 text-center">
-        &copy; <h3 className="inline">{dictionary.footer.copyright}</h3>
+        &copy; <p className="inline">{dictionary.footer.copyright}</p>
       </section>
     </footer>
   );
