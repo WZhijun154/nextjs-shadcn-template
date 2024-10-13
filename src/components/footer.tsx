@@ -28,7 +28,7 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
             <p className="font-bold text-lg">{subSection.category}</p>
             {subSection.items.map((item) => (
               <div key={item.label}>
-                <Link href={item.href} className="opacity-60 hover:opacity-100">
+                <Link href={item.href} className="opacity-90 hover:opacity-100">
                   {item.label}
                 </Link>
               </div>
