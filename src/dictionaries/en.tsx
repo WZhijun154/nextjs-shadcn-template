@@ -9,7 +9,7 @@ export const en = {
   brandName: brandName,
   landingPage: {
     metadata: {
-      title: "Homepage Title",
+      title: `Homepage Title | ${brandName}`,
       description: "Homepage Description",
     },
     hero: {
