@@ -10,7 +10,7 @@ import {
   FloatingSearchButton,
 } from "@/components/dynamics";
 import { ProxyAgent, setGlobalDispatcher } from "undici";
-import { IS_PRODUCTION, SITE_URL } from "@/lib/utils-server-side";
+import { IS_PRODUCTION, SITE_URL, GTAG_ID } from "@/lib/utils-server-side";
 import { i18n, Locale } from "@/lib/utils-common";
 import { ScrollProgress } from "@/components/dynamics";
 import { getDictionary } from "@/lib/dictionaries";
@@ -47,12 +47,13 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const GoogleTag = ({ gtagId }: { gtagId: string }) => {
+const GoogleTag = () => {
+  if (GTAG_ID === "not-set") return null;
   return (
     <div className="hidden">
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
       />
       <Script
         id="google-analytics"
@@ -62,7 +63,7 @@ const GoogleTag = ({ gtagId }: { gtagId: string }) => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${gtagId}');
+          gtag('config', '${GTAG_ID}');
       `,
         }}
       />
@@ -106,7 +107,7 @@ export default async function RootLayout({
           <FloatingSearchButton items={searchItems} />
           {/* Functional */}
           <Toaster closeButton richColors />
-          <GoogleTag gtagId="G-XXXXXXX" />
+          <GoogleTag />
         </Providers>
       </body>
     </html>

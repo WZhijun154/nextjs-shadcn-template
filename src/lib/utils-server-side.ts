@@ -6,6 +6,8 @@ export const SITE_URL = IS_PRODUCTION
   ? (process.env.SITE_URL as string)
   : "http://localhost:3000";
 
+export const GTAG_ID = process.env.GTAG_ID as string;
+
 export const AUTHOR_NAME = "Wang Zhijun";
 export const AUTHOR_TITLE = "Full Stack Developer";
 export const AUTHOR_GITHUB_URL = "https://github.com/WZhijun154";
