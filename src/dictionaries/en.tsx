@@ -57,19 +57,19 @@ export const en = {
           h3: "Responsive Design",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-          image: "/looking-ahead.png",
+          icon: <Medal strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
           h3: "Intuitive user interface",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-          image: "/reflecting.png",
+          icon: <Map strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
           h3: "AI-Powered insights",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-          image: "/growth.png",
+          icon: <Plane strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
       ],
     },
@@ -337,7 +337,6 @@ export const en = {
     ],
     copyright: `&copy; ${TODAY_YEAR} ${brandName}. All rights reserved.`,
   },
-
   navbar: {
     RouteList: [
       {

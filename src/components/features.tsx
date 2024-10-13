@@ -1,11 +1,5 @@
 // import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Section } from "@/components/section";
 // const featureList: string[] = [
 //   "Dark/Light theme",
@@ -49,21 +43,19 @@ export const Features = async ({ lang }: { lang: Locale }) => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 custom-margin-after-description">
         {dictionary.landingPage.greatFeatures.features.map(
-          ({ h3, description, image }) => (
+          ({ h3, description, icon }) => (
             <Card key={h3}>
               <CardHeader>
-                <CardTitle>{h3}</CardTitle>
+                <div className="flex items-center gap-2">
+                  {icon}
+                  <CardTitle>{h3}</CardTitle>
+                </div>
               </CardHeader>
 
               <CardContent>{description}</CardContent>
 
-              <CardFooter>
-                <img
-                  src={image}
-                  alt="About feature"
-                  className="w-[200px] lg:w-[300px] mx-auto"
-                />
-              </CardFooter>
+              {/* <CardFooter> */}
+              {/* </CardFooter> */}
             </Card>
           )
         )}
