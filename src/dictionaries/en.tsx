@@ -338,22 +338,24 @@ export const en = {
     copyright: `&copy; ${TODAY_YEAR} ${brandName}. All rights reserved.`,
   },
 
-  navbarRouteList: [
-    {
-      href: `/${lang}#features`,
-      label: "Features",
-    },
-    {
-      href: `/${lang}#testimonials`,
-      label: "Testimonials",
-    },
-    {
-      href: `/${lang}#pricing`,
-      label: "Pricing",
-    },
-    {
-      href: `/${lang}#faq`,
-      label: "FAQ",
-    },
-  ],
+  navbar: {
+    RouteList: [
+      {
+        href: `/${lang}#features`,
+        label: "Features",
+      },
+      {
+        href: `/${lang}#testimonials`,
+        label: "Testimonials",
+      },
+      {
+        href: `/${lang}#pricing`,
+        label: "Pricing",
+      },
+      {
+        href: `/${lang}#faq`,
+        label: "FAQ",
+      },
+    ],
+  },
 };

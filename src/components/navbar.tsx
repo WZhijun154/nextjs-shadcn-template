@@ -61,7 +61,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {dictionary.navbarRouteList.map(({ href, label }) => (
+                  {dictionary.navbar.RouteList.map(({ href, label }) => (
                     <Link
                       rel="noreferrer noopener"
                       key={label}
@@ -79,7 +79,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
 
           {/* desktop */}
           <div className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">
-            {dictionary.navbarRouteList.map((route, i) => (
+            {dictionary.navbar.RouteList.map((route, i) => (
               <Link
                 rel="noreferrer noopener"
                 href={route.href}
