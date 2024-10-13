@@ -21,29 +21,6 @@ import {
 import Link from "next/link";
 // import { ScrollProgress } from "@/components/dynamics";
 import { Dictionary } from "@/lib/dictionaries";
-interface RouteProps {
-  href: string;
-  label: string;
-}
-
-const routeList: RouteProps[] = [
-  {
-    href: "#features",
-    label: "Features",
-  },
-  {
-    href: "#testimonials",
-    label: "Testimonials",
-  },
-  {
-    href: "#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
-];
 
 export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -84,7 +61,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({ href, label }: RouteProps) => (
+                  {dictionary.navbarRouteList.map(({ href, label }) => (
                     <Link
                       rel="noreferrer noopener"
                       key={label}
@@ -102,7 +79,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
 
           {/* desktop */}
           <div className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">
-            {routeList.map((route: RouteProps, i) => (
+            {dictionary.navbarRouteList.map((route, i) => (
               <Link
                 rel="noreferrer noopener"
                 href={route.href}

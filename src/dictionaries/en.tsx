@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TODAY_YEAR } from "@/lib/utils-server-side";
 
 const brandName = "ShadcnUI/Nextjs";
+const lang = "en";
 
 export const en = {
   brandName: brandName,
@@ -303,7 +304,7 @@ export const en = {
         items: [
           {
             label: "Web",
-            href: "/",
+            href: `/${lang}`,
           },
         ],
       },
@@ -312,15 +313,15 @@ export const en = {
         items: [
           {
             label: "Features",
-            href: "/en#features",
+            href: `/${lang}#features`,
           },
           {
             label: "Pricing",
-            href: "/en#pricing",
+            href: `/${lang}#pricing`,
           },
           {
             label: "FAQ",
-            href: "/en#faq",
+            href: `/${lang}#faq`,
           },
         ],
       },
@@ -336,4 +337,23 @@ export const en = {
     ],
     copyright: `&copy; ${TODAY_YEAR} ${brandName}. All rights reserved.`,
   },
+
+  navbarRouteList: [
+    {
+      href: `/${lang}#features`,
+      label: "Features",
+    },
+    {
+      href: `/${lang}#testimonials`,
+      label: "Testimonials",
+    },
+    {
+      href: `/${lang}#pricing`,
+      label: "Pricing",
+    },
+    {
+      href: `/${lang}#faq`,
+      label: "FAQ",
+    },
+  ],
 };
