@@ -11,7 +11,7 @@ export const Hero = async ({ lang }: { lang: Locale }) => {
       id="hero"
       className="flex flex-col items-center justify-center"
     >
-      <div className="text-center lg:text-start space-y-6 flex flex-col items-center justify-center">
+      <div className="text-center lg:text-start space-y-6 flex flex-col items-center justify-center w-10/12">
         <div className="custom-h1">
           {/* <h1 className="inline">
             <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
@@ -30,7 +30,7 @@ export const Hero = async ({ lang }: { lang: Locale }) => {
           <h1>{dictionary.landingPage.hero.h1}</h1>
         </div>
 
-        <p className="custom-muted-description md:w-10/12 mx-auto lg:mx-0 text-center">
+        <p className="custom-muted-description md:w-full mx-auto lg:mx-0 text-center">
           {dictionary.landingPage.hero.description}
         </p>
 
