@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 export const i18n = {
-  locales: ["en"],
+  locales: ["en", "ja"],
   defaultLocale: "en",
 } as const;
 

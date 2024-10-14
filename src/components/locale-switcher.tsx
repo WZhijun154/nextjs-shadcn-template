@@ -3,10 +3,9 @@
 import * as React from "react";
 import { Globe } from "lucide-react";
 import {
-  DropdownMenu,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
 } from "@/components/dynamics";
 // do not use LocalizeLink in locale-switcher
 import Link from "next/link";
@@ -24,6 +23,17 @@ const needShowLocaleSwitcher = i18n.locales.length > 1;
 
 export function LocaleSwitcher() {
   const pathname = usePathname();
+
+  const isMissingLocale = i18n.locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  );
+
+  const isDefaultLocale = isMissingLocale;
+
+  const currentLang = isDefaultLocale
+    ? i18n.defaultLocale
+    : pathname.split("/")[1];
+
   const redirectedPathname = (locale: Locale) => {
     if (!pathname) return "/";
 
@@ -58,20 +68,26 @@ export function LocaleSwitcher() {
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger
-        className="w-9 rounded-lg px-0 py-2 justify-center items-center flex flex-row border-none"
+    <HoverCard openDelay={100}>
+      <HoverCardTrigger
+        className="w-20 rounded-lg px-0 py-2 justify-center items-center flex flex-row gap-1"
         aria-label="Locale Switcher"
       >
         <Globe className="h-5 w-5" />
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-24">
+        <p className="text-sm">{localeNames[currentLang]}</p>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-24 p-4">
         {languages.map((lang) => (
-          <DropdownMenuItem key={lang.code} asChild>
-            <Link href={redirectedPathname(lang.code)}>{lang.name}</Link>
-          </DropdownMenuItem>
+          <div key={lang.code} className="py-1">
+            <Link
+              href={redirectedPathname(lang.code)}
+              className={lang.code === currentLang ? "text-primary" : ""}
+            >
+              {lang.name}
+            </Link>
+          </div>
         ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </HoverCardContent>
+    </HoverCard>
   );
 }

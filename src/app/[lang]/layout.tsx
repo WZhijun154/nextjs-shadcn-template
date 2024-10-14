@@ -77,16 +77,25 @@ export async function generateMetadata(
   const notDefaultLanguages = i18n.locales.filter(
     (locale) => locale !== i18n.defaultLocale
   );
-  const languages = notDefaultLanguages.reduce((acc, locale) => {
+
+  // Declare the languages variable first
+  const languages: Record<string, string> = {};
+
+  // ops 1
+  languages[i18n.defaultLocale] = pathnameWithoutLocale;
+
+  // ops 2
+  notDefaultLanguages.reduce((acc, locale) => {
     if (pathnameWithoutLocale === "/") {
       acc[locale] = `/${locale}`;
     } else {
       acc[locale] = `/${locale}${pathnameWithoutLocale}`;
     }
     return acc;
-  }, {} as Record<string, string>);
+  }, languages);
 
-  languages[i18n.defaultLocale] = pathnameWithoutLocale;
+  // ops 3
+  languages["x-default"] = pathnameWithoutLocale;
 
   const dictionary = await getDictionary(lang);
 

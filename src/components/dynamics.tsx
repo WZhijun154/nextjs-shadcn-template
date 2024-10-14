@@ -559,3 +559,26 @@ export const Combobox = dynamic(
     ssr: true,
   }
 );
+
+export const HoverCard = dynamic(
+  () => import("@/components/ui/hover-card").then((mod) => mod.HoverCard),
+  {
+    ssr: true,
+  }
+);
+
+export const HoverCardTrigger = dynamic(
+  () =>
+    import("@/components/ui/hover-card").then((mod) => mod.HoverCardTrigger),
+  {
+    ssr: true,
+  }
+);
+
+export const HoverCardContent = dynamic(
+  () =>
+    import("@/components/ui/hover-card").then((mod) => mod.HoverCardContent),
+  {
+    ssr: true,
+  }
+);

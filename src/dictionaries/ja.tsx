@@ -3,12 +3,14 @@ import Link from "next/link";
 import { TODAY_YEAR } from "@/lib/utils-server-side";
 
 const brandName = "ShadcnUI/Nextjs";
+const lang = "ja";
 
 export const ja = {
+  lang: lang,
   brandName: brandName,
   landingPage: {
     metadata: {
-      title: "ホームページのタイトル",
+      title: `ホームページタイトル`,
       description: "ホームページの説明",
     },
     hero: {
@@ -56,19 +58,19 @@ export const ja = {
           h3: "レスポンシブデザイン",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-          image: "/looking-ahead.png",
+          icon: <Medal strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
           h3: "直感的なユーザーインターフェース",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-          image: "/reflecting.png",
+          icon: <Map strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
           h3: "AIパワードインサイト",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-          image: "/growth.png",
+          icon: <Plane strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
       ],
     },
@@ -100,7 +102,7 @@ export const ja = {
       ],
     },
     cta: {
-      h2: "すべてのアイデアとコンセプトを一つのインターフェースで",
+      h2: "すべてのアイデアとコンセプトを1つのインターフェースで",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
       requestDemoButton: "デモをリクエスト",
@@ -117,7 +119,55 @@ export const ja = {
           userName: "@john_Doe",
           comment: "このランディングページは素晴らしいです！",
         },
-        // ... other testimonials ...
+        {
+          image: "https://github.com/shadcn.png",
+          name: "John Doe Nextjs",
+          userName: "@john_Doe1",
+          comment:
+            "Lorem ipsum dolor sit amet,empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+        },
+        {
+          image: "https://github.com/shadcn.png",
+          name: "John Doe Nextjs",
+          userName: "@john_Doe2",
+          comment:
+            "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        },
+        {
+          image: "https://github.com/shadcn.png",
+          name: "John Doe Nextjs",
+          userName: "@john_Doe3",
+          comment:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+        },
+        {
+          image: "https://github.com/shadcn.png",
+          name: "John Doe Nextjs",
+          userName: "@john_Doe4",
+          comment:
+            "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud.",
+        },
+        {
+          image: "https://github.com/shadcn.png",
+          name: "John Doe Nextjs",
+          userName: "@john_Doe5",
+          comment:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        },
+        {
+          image: "https://github.com/shadcn.png",
+          name: "John Doe Nextjs",
+          userName: "@john_Doe5",
+          comment:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        },
+        {
+          image: "https://github.com/shadcn.png",
+          name: "John Doe Nextjs",
+          userName: "@john_Doe5",
+          comment:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        },
       ],
     },
     team: {
@@ -136,21 +186,102 @@ export const ja = {
               name: "Linkedin",
               url: "https://www.linkedin.com/in/leopoldo-miranda/",
             },
-            // ... other social networks ...
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/",
+            },
           ],
         },
-        // ... other team members ...
+        {
+          image: "https://i.pravatar.cc/150?img=60",
+          name: "John Doe",
+          position: "テックリード",
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non unde error facere hic reiciendis illo",
+          socialNetworks: [
+            {
+              name: "Linkedin",
+              url: "https://www.linkedin.com/in/leopoldo-miranda/",
+            },
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/",
+            },
+          ],
+        },
+        {
+          image: "https://i.pravatar.cc/150?img=36",
+          name: "Ashley Ross",
+          position: "フロントエンドデベロッパー",
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non unde error facere hic reiciendis illo",
+          socialNetworks: [
+            {
+              name: "Linkedin",
+              url: "https://www.linkedin.com/in/leopoldo-miranda/",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/",
+            },
+          ],
+        },
+        {
+          image: "https://i.pravatar.cc/150?img=17",
+          name: "Bruce Rogers",
+          position: "バックエンドデベロッパー",
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non unde error facere hic reiciendis illo",
+          socialNetworks: [
+            {
+              name: "Linkedin",
+              url: "https://www.linkedin.com/in/leopoldo-miranda/",
+            },
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/",
+            },
+          ],
+        },
       ],
     },
     faq: {
       h2: "よくある質問",
+      description: "一般的な質問への回答を見つけてください...",
       items: [
         {
           h3: "このテンプレートは無料ですか？",
           h4: "はい。これは無料のChadcnUIテンプレートです。",
           value: "item-1",
         },
-        // ... other FAQs ...
+        {
+          h3: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+          h4: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+          value: "item-2",
+        },
+        {
+          h3: "Lorem ipsum dolor sit amet  Consectetur natus dolores minus quibusdam?",
+          h4: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis necessitatibus maxime quis ipsa vitae cumque quo?",
+          value: "item-3",
+        },
+        {
+          h3: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?",
+          h4: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+          value: "item-4",
+        },
+        {
+          h3: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus?",
+          h4: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+          value: "item-5",
+        },
       ],
     },
   },
@@ -169,41 +300,66 @@ export const ja = {
   footer: {
     subSections: [
       {
-        h3: "プラットフォーム",
+        category: "プラットフォーム",
         items: [
           {
             label: "ウェブ",
-            href: "/",
+            href: `/${lang}`,
           },
         ],
       },
       {
-        h3: "概要",
+        category: "概要",
         items: [
           {
             label: "機能",
-            href: "/en#features",
+            href: `/${lang}#features`,
           },
-          {
-            label: "価格",
-            href: "/en#pricing",
-          },
+          // {
+          //   label: "価格",
+          //   href: `/${lang}#pricing`,
+          // },
           {
             label: "FAQ",
-            href: "/en#faq",
+            href: `/${lang}#faq`,
           },
         ],
       },
+      // {
+      //   category: "他のツールを探す",
+      //   items: [
+      //     {
+      //       label: "Youtube",
+      //       href: "https://www.youtube.com/",
+      //     },
+      //   ],
+      // },
+    ],
+    copyright: `${TODAY_YEAR} ${brandName}. すべての権利を保有します。`,
+  },
+  navbar: {
+    RouteList: [
       {
-        h3: "他のツールを探す",
-        items: [
-          {
-            label: "Youtube",
-            href: "https://www.youtube.com/",
-          },
-        ],
+        href: `/${lang}#features`,
+        label: "機能",
+      },
+      // {
+      //   href: `/${lang}#testimonials`,
+      //   label: "お客様の声",
+      // },
+      // {
+      //   href: `/${lang}#pricing`,
+      //   label: "価格",
+      // },
+      {
+        href: `/${lang}#faq`,
+        label: "FAQ",
       },
     ],
-    copyright: `&copy; ${TODAY_YEAR} ${brandName}. All rights reserved.`,
+  },
+  comingSoon: {
+    h2: "近日公開",
+    description:
+      "この機能をお届けするために一生懸命取り組んでいます。お楽しみに！",
   },
 };
