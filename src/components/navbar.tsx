@@ -45,7 +45,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
             <LocaleSwitcher />
             <ThemeSwitch />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="px-2">
+              <SheetTrigger className="px-2" aria-label="Menu">
                 <Menu
                   className="flex md:hidden h-5 w-5"
                   onClick={() => setIsOpen(true)}
