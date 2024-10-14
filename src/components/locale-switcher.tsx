@@ -36,7 +36,10 @@ export function LocaleSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="w-9 rounded-lg px-0 py-2 justify-center items-center flex flex-row border-none">
+      <DropdownMenuTrigger
+        className="w-9 rounded-lg px-0 py-2 justify-center items-center flex flex-row border-none"
+        aria-label="Language switcher"
+      >
         <Globe className="h-5 w-5" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-24">
