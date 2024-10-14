@@ -25,16 +25,17 @@ export const Cta = async ({ lang }: { lang: Locale }) => {
         </div>
 
         <div className="space-y-4 lg:col-start-2">
-          <Link href={`/${lang}#request-demo`}>
-            <Button className="w-full md:mr-4 md:w-auto">
+          <Button className="w-full md:mr-4 md:w-auto" asChild>
+            <Link href={`/${lang}#request-demo`}>
               {dictionary.landingPage.cta.requestDemoButton}
-            </Button>
-          </Link>
-          <Link href={`/${lang}#features`}>
-            <Button variant="outline" className="w-full md:w-auto">
+            </Link>
+          </Button>
+
+          <Button variant="outline" className="w-full md:w-auto" asChild>
+            <Link href={`/${lang}#features`}>
               {dictionary.landingPage.cta.viewAllFeaturesButton}
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </UniqueSection>
