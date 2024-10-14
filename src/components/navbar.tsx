@@ -78,20 +78,21 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
           </span>
 
           {/* desktop */}
-          <div className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">
+          <ul className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">
             {dictionary.navbar.RouteList.map((route, i) => (
-              <Link
-                rel="noreferrer noopener"
-                href={route.href}
-                key={i}
-                className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
-                })}`}
-              >
-                {route.label}
-              </Link>
+              <li key={i}>
+                <Link
+                  rel="noreferrer noopener"
+                  href={route.href}
+                  className={`text-[17px] ${buttonVariants({
+                    variant: "ghost",
+                  })}`}
+                >
+                  {route.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="hidden md:flex gap-2 items-center">
             {/* <Link
