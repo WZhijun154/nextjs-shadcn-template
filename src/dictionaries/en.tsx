@@ -6,6 +6,7 @@ const brandName = "ShadcnUI/Nextjs";
 const lang = "en";
 
 export const en = {
+  lang: lang,
   brandName: brandName,
   landingPage: {
     metadata: {

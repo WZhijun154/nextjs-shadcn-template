@@ -7,11 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${SITE_URL}`,
       lastModified: current,
-      alternates: {
-        languages: {
-          en: `${SITE_URL}/en`,
-        },
-      },
     },
   ];
 }

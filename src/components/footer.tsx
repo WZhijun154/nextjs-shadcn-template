@@ -1,5 +1,5 @@
 import { LogoIcon } from "@/components/icons";
-import Link from "next/link";
+import { LocalizeLink } from "@/components/localize-link";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
 
@@ -13,14 +13,15 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
       <hr className="w-full mx-auto" />
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
-          <Link
+          <LocalizeLink
             rel="noreferrer noopener"
             href="/"
+            lang={lang}
             className="font-bold text-xl flex"
           >
             <LogoIcon />
             {dictionary.brandName}
-          </Link>
+          </LocalizeLink>
         </div>
 
         {dictionary.footer.subSections.map((subSection) => (
@@ -28,9 +29,13 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
             <p className="font-bold text-lg">{subSection.category}</p>
             {subSection.items.map((item) => (
               <div key={item.label}>
-                <Link href={item.href} className="opacity-90 hover:opacity-100">
+                <LocalizeLink
+                  href={item.href}
+                  lang={lang}
+                  className="opacity-90 hover:opacity-100"
+                >
                   {item.label}
-                </Link>
+                </LocalizeLink>
               </div>
             ))}
           </div>

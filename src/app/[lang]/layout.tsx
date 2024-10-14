@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "../globals.css";
 import Script from "next/script";
+import { Metadata } from "next";
 import { Footer } from "@/components/footer";
 import {
   Providers,
@@ -21,20 +22,86 @@ if (!IS_PRODUCTION) {
   setGlobalDispatcher(new ProxyAgent("http://localhost:7897"));
 }
 
-export const metadata = {
-  // make sure to set the title and description at every page, not here
-  // however, the title and description here will be used as fallback
-  // if no title and description are set at the page level
-  title: `${SITE_URL}`,
-  description: `${SITE_URL}`,
-  // setting metadata base to the site url and canonical to ./
-  // will automatically generate canonical urls for all pages
-  // see https://github.com/vercel/next.js/issues/49743
-  metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: "./",
-  },
+// export const metadata = {
+//   // make sure to set the title and description at every page, not here
+//   // however, the title and description here will be used as fallback
+//   // if no title and description are set at the page level
+//   title: `${SITE_URL}`,
+//   description: `${SITE_URL}`,
+//   // setting metadata base to the site url and canonical to ./
+//   // will automatically generate canonical urls for all pages
+//   // see https://github.com/vercel/next.js/issues/49743
+//   metadataBase: new URL(SITE_URL),
+//   alternates: {
+//     canonical: "./",
+//   },
+// };
+
+// a temporary solution to get the pathname and do not affect change page to dynamic
+// see https://github.com/vercel/next.js/discussions/50189
+const getPathnameFromMetadataState = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  state: any
+): string | undefined => {
+  const res = Object.getOwnPropertySymbols(state || {})
+    .map((p) => state[p])
+    .find((state) => state?.hasOwnProperty?.("urlPathname"));
+
+  return res?.urlPathname.replace(/\?.+/, "");
 };
+
+export async function generateMetadata(
+  {
+    params: { lang },
+  }: {
+    params: { lang: Locale };
+  },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  metadataState: any
+): Promise<Metadata> {
+  const pathname = getPathnameFromMetadataState(metadataState) || "";
+
+  const pathnameHasDefaultLocale =
+    pathname.startsWith(`/${i18n.defaultLocale}/`) ||
+    pathname === `/${i18n.defaultLocale}`;
+
+  const pathnameIsMissingLocale = i18n.locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  );
+
+  let pathnameWithoutLocale = pathname;
+  if (!pathnameIsMissingLocale) {
+    pathnameWithoutLocale = pathname.replace(/^\/[^/]+/, "") || "/";
+  }
+
+  const notDefaultLanguages = i18n.locales.filter(
+    (locale) => locale !== i18n.defaultLocale
+  );
+  const languages = notDefaultLanguages.reduce((acc, locale) => {
+    if (pathnameWithoutLocale === "/") {
+      acc[locale] = `/${locale}`;
+    } else {
+      acc[locale] = `/${locale}${pathnameWithoutLocale}`;
+    }
+    return acc;
+  }, {} as Record<string, string>);
+
+  languages[i18n.defaultLocale] = pathnameWithoutLocale;
+
+  const dictionary = await getDictionary(lang);
+
+  return {
+    title: {
+      template: "%s - " + dictionary.brandName,
+      default: dictionary.brandName,
+    },
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: pathnameHasDefaultLocale ? pathnameWithoutLocale : pathname,
+      languages: languages,
+    },
+  };
+}
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",

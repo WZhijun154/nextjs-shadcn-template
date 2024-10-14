@@ -18,7 +18,7 @@ import {
   SheetTrigger,
   LocaleSwitcher,
 } from "@/components/dynamics";
-import Link from "next/link";
+import { LocalizeLink } from "@/components/localize-link";
 // import { ScrollProgress } from "@/components/dynamics";
 import { Dictionary } from "@/lib/dictionaries";
 
@@ -30,14 +30,15 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between items-center relative">
           <NavigationMenuItem className="font-bold flex">
-            <Link
+            <LocalizeLink
               rel="noreferrer noopener"
               href="/"
+              lang={dictionary.lang}
               className="ml-2 font-bold text-xl flex"
             >
               <LogoIcon />
               {dictionary.brandName}
-            </Link>
+            </LocalizeLink>
           </NavigationMenuItem>
 
           {/* mobile */}
@@ -62,15 +63,16 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
                 </SheetHeader>
                 <div className="flex flex-col justify-center items-center gap-2 mt-4">
                   {dictionary.navbar.RouteList.map(({ href, label }) => (
-                    <Link
+                    <LocalizeLink
                       rel="noreferrer noopener"
                       key={label}
                       href={href}
+                      lang={dictionary.lang}
                       onClick={() => setIsOpen(false)}
                       className={buttonVariants({ variant: "ghost" })}
                     >
                       {label}
-                    </Link>
+                    </LocalizeLink>
                   ))}
                 </div>
               </SheetContent>
@@ -78,24 +80,24 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
           </span>
 
           {/* desktop */}
-          <ul className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">
             {dictionary.navbar.RouteList.map((route, i) => (
-              <li key={i}>
-                <Link
-                  rel="noreferrer noopener"
-                  href={route.href}
-                  className={`text-[17px] ${buttonVariants({
-                    variant: "ghost",
-                  })}`}
-                >
-                  {route.label}
-                </Link>
-              </li>
+              <LocalizeLink
+                rel="noreferrer noopener"
+                href={route.href}
+                lang={dictionary.lang}
+                key={i}
+                className={`text-[17px] ${buttonVariants({
+                  variant: "ghost",
+                })}`}
+              >
+                {route.label}
+              </LocalizeLink>
             ))}
-          </ul>
+          </div>
 
           <div className="hidden md:flex gap-2 items-center">
-            {/* <Link
+            {/* <LocalizeLink
               rel="noreferrer noopener"
               href={AUTHOR_GITHUB_URL}
               target="_blank"
@@ -103,7 +105,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
             >
               <GitHubLogoIcon className="mr-2 w-5 h-5" />
               Github
-            </Link> */}
+            </LocalizeLink> */}
 
             <LocaleSwitcher />
             <ThemeSwitch />

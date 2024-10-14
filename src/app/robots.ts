@@ -6,6 +6,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: ["/"],
+        disallow: [
+          "/user/",
+          "/admin/",
+          "/api/",
+          "/site/",
+          "/*/site/",
+          "/whois/",
+          "/*/whois/",
+          "/traffic/",
+          "/*/traffic/",
+        ],
       },
     ],
     host: SITE_URL,
