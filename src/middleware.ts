@@ -18,7 +18,7 @@ import { i18n } from "@/lib/utils-common";
 //     locales
 //   );
 
-//   const locale = matchLocale(languages, locales, i18n.defaultLocale);
+// const locale = matchLocale(languages, locales, i18n.defaultLocale);
 
 //   return locale;
 // }
