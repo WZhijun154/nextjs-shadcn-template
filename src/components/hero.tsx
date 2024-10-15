@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
 import { GradientSection } from "@/components/section";
+import { LocalizeLink } from "@/components/localize-link";
 
 export const Hero = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
@@ -35,7 +36,11 @@ export const Hero = async ({ lang }: { lang: Locale }) => {
         </p>
 
         <div className="w-full flex flex-col items-center justify-center container">
-          <Button className="w-full md:w-1/3">Get Started</Button>
+          <Button className="w-full md:w-1/3">
+            <LocalizeLink href="#main" lang={lang} asChild>
+              {dictionary.landingPage.hero.buttonText}
+            </LocalizeLink>
+          </Button>
         </div>
       </div>
 

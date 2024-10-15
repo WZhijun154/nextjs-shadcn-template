@@ -18,12 +18,14 @@ import {
   SheetTrigger,
   LocaleSwitcher,
 } from "@/components/dynamics";
-import { LocalizeLink } from "@/components/localize-link";
+import { LocalizeLink } from "./localize-link";
 // import { ScrollProgress } from "@/components/dynamics";
 import { Dictionary } from "@/lib/dictionaries";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const isMobile = useIsMobile();
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* <ScrollProgress /> */}
@@ -37,7 +39,8 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
               className="ml-2 font-bold text-xl flex"
             >
               <LogoIcon />
-              {dictionary.brandName}
+              {(!isMobile || dictionary.brandName.length <= 15) &&
+                dictionary.brandName}
             </LocalizeLink>
           </NavigationMenuItem>
 

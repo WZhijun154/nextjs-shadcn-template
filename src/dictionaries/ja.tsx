@@ -17,6 +17,7 @@ export const ja = {
       h1: "成功のためのAIパワードパートナー",
       description:
         "プロジェクトに必要なセクションでNextjsランディングページを簡単に構築します。",
+      buttonText: "始めましょう",
     },
     howItWorks: {
       h2: "ステップバイステップガイド",

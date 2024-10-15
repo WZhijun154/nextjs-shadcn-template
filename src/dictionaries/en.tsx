@@ -17,6 +17,7 @@ export const en = {
       h1: "Your AI-powered partner for success",
       description:
         "Build your Nextjs landing page effortlessly with the required sections to your project.",
+      buttonText: "Get Started",
     },
     howItWorks: {
       h2: "How It Works Step-by-Step Guide",

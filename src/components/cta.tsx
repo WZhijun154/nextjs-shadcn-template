@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
 import { UniqueSection } from "@/components/section";
-import { LocalizeLink } from "@/components/localize-link";
-
+import { LocalizeLink } from "./localize-link";
 export const Cta = async ({ lang }: { lang: Locale }) => {
   const dictionary = await getDictionary(lang);
   return (
@@ -26,13 +25,13 @@ export const Cta = async ({ lang }: { lang: Locale }) => {
 
         <div className="space-y-4 lg:col-start-2">
           <Button className="w-full md:mr-4 md:w-auto" asChild>
-            <LocalizeLink href={`#features`} lang={lang}>
+            <LocalizeLink href="#main" lang={lang}>
               {dictionary.landingPage.cta.requestDemoButton}
             </LocalizeLink>
           </Button>
 
           <Button variant="outline" className="w-full md:w-auto" asChild>
-            <LocalizeLink href={`#features`} lang={lang}>
+            <LocalizeLink href="#features" lang={lang}>
               {dictionary.landingPage.cta.viewAllFeaturesButton}
             </LocalizeLink>
           </Button>

@@ -6,11 +6,16 @@ import {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
 } from "@/components/dynamics";
 // do not use LocalizeLink in locale-switcher
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { i18n, Locale, localeNames } from "@/lib/utils-common";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 const languages = i18n.locales.map((locale) => {
   return {
@@ -23,6 +28,7 @@ const needShowLocaleSwitcher = i18n.locales.length > 1;
 
 export function LocaleSwitcher() {
   const pathname = usePathname();
+  const isMobile = useIsMobile();
 
   const isMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
@@ -65,6 +71,31 @@ export function LocaleSwitcher() {
 
   if (!needShowLocaleSwitcher) {
     return null;
+  }
+
+  if (isMobile) {
+    return (
+      <div className="w-20 rounded-lg px-0 py-2 justify-center items-center flex flex-row gap-1">
+        <Globe className="h-5 w-5" />
+        <DropdownMenu>
+          <DropdownMenuTrigger className="text-sm" aria-label="Locale Switcher">
+            {localeNames[currentLang]}
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            {languages.map((lang) => (
+              <DropdownMenuItem
+                key={lang.code}
+                onSelect={() => {
+                  window.location.href = redirectedPathname(lang.code);
+                }}
+              >
+                {lang.name}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    );
   }
 
   return (
