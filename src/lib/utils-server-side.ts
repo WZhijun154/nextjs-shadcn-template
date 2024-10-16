@@ -6,6 +6,8 @@ export const SITE_URL = IS_PRODUCTION
   ? (process.env.SITE_URL as string)
   : "http://localhost:3000";
 
+export const SUPPORT_EMAIL = process.env.SUPPORT_EMAIL as string;
+
 export const GTAG_ID = IS_PRODUCTION
   ? (process.env.GTAG_ID as string)
   : "NOT_SET";

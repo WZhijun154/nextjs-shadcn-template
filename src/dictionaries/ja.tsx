@@ -1,6 +1,5 @@
 import { Medal, Map, Plane, Gift, ChartBar, Wallet, Boxes } from "lucide-react";
-import Link from "next/link";
-import { TODAY_YEAR } from "@/lib/utils-server-side";
+import { TODAY_YEAR, SUPPORT_EMAIL } from "@/lib/utils-server-side";
 
 const brandName = "ShadcnUI/Nextjs";
 const lang = "ja";
@@ -286,18 +285,6 @@ export const ja = {
       ],
     },
   },
-  contactUs: (
-    <p className="font-medium mt-4">
-      まだ質問がありますか？{" "}
-      <Link
-        rel="noreferrer noopener"
-        href="#"
-        className="text-primary transition-all border-primary hover:border-b-2"
-      >
-        お問い合わせ
-      </Link>
-    </p>
-  ),
   footer: {
     subSections: [
       {
@@ -335,6 +322,15 @@ export const ja = {
       //     },
       //   ],
       // },
+      {
+        category: "法的情報",
+        items: [
+          {
+            label: "お問い合わせ",
+            href: `mailto:${SUPPORT_EMAIL}`,
+          },
+        ],
+      },
     ],
     copyright: `${TODAY_YEAR} ${brandName}. すべての権利を保有します。`,
   },

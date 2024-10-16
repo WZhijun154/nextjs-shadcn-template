@@ -1,6 +1,5 @@
 import { Medal, Map, Plane, Gift, ChartBar, Wallet, Boxes } from "lucide-react";
-import Link from "next/link";
-import { TODAY_YEAR } from "@/lib/utils-server-side";
+import { SUPPORT_EMAIL, TODAY_YEAR } from "@/lib/utils-server-side";
 
 const brandName = "ShadcnUI/Nextjs";
 const lang = "en";
@@ -288,18 +287,6 @@ export const en = {
       ],
     },
   },
-  contactUs: (
-    <p className="font-medium mt-4">
-      Still have questions?{" "}
-      <Link
-        rel="noreferrer noopener"
-        href="#"
-        className="text-primary transition-all border-primary hover:border-b-2"
-      >
-        Contact us
-      </Link>
-    </p>
-  ),
   footer: {
     subSections: [
       {
@@ -337,6 +324,15 @@ export const en = {
       //     },
       //   ],
       // },
+      {
+        category: "Legal",
+        items: [
+          {
+            label: "Contact us",
+            href: `mailto:${SUPPORT_EMAIL}`,
+          },
+        ],
+      },
     ],
     copyright: `${TODAY_YEAR} ${brandName}. All rights reserved.`,
   },
@@ -364,4 +360,6 @@ export const en = {
     h2: "Coming Soon",
     description: "We are working hard to bring you this feature. Stay tuned!",
   },
+  contactUs:
+    "If you have any questions, please feel free to reach out to me at",
 };

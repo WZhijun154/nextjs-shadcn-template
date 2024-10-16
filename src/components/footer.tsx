@@ -1,5 +1,5 @@
 import { LogoIcon } from "@/components/icons";
-import { LocalizeLink } from "@/components/localize-link";
+import { LocalizeLink } from "./localize-link";
 import { getDictionary } from "@/lib/dictionaries";
 import { Locale } from "@/lib/utils-common";
 
@@ -8,7 +8,7 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
   return (
     <footer
       id="footer"
-      className="flex flex-col items-center bg-muted text-muted-foreground"
+      className="flex flex-col items-center bg-muted text-foreground"
     >
       <hr className="w-full mx-auto" />
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
@@ -32,7 +32,7 @@ export const Footer = async ({ lang }: { lang: Locale }) => {
                 <LocalizeLink
                   href={item.href}
                   lang={lang}
-                  className="opacity-90 hover:opacity-100"
+                  className="opacity-50 hover:opacity-100 duration-300 transition-all"
                 >
                   {item.label}
                 </LocalizeLink>
