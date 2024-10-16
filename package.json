@@ -10,8 +10,8 @@
     "lint": "next lint",
     "build:worker": "cloudflare",
     "dev:worker": "wrangler dev --port 8771",
-    "preview:worker": "npm run build:worker && npm run dev:worker",
-    "deploy:worker": "npm run build:worker && wrangler deploy"
+    "preview:worker": "pnpm run build:worker && pnpm run dev:worker",
+    "deploy:worker": "pnpm run build:worker && wrangler deploy"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
