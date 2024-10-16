@@ -294,7 +294,7 @@ export const en = {
         items: [
           {
             label: "Web",
-            href: `/${lang}`,
+            href: `/`,
           },
         ],
       },
@@ -303,7 +303,7 @@ export const en = {
         items: [
           {
             label: "Features",
-            href: `/${lang}#features`,
+            href: `#features`,
           },
           // {
           //   label: "Pricing",
@@ -311,7 +311,7 @@ export const en = {
           // },
           {
             label: "FAQ",
-            href: `/${lang}#faq`,
+            href: `#faq`,
           },
         ],
       },
@@ -339,7 +339,7 @@ export const en = {
   navbar: {
     RouteList: [
       {
-        href: `/${lang}#features`,
+        href: `#features`,
         label: "Features",
       },
       // {
@@ -351,7 +351,7 @@ export const en = {
       //   label: "Pricing",
       // },
       {
-        href: `/${lang}#faq`,
+        href: `#faq`,
         label: "FAQ",
       },
     ],

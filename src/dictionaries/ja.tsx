@@ -292,7 +292,7 @@ export const ja = {
         items: [
           {
             label: "ウェブ",
-            href: `/${lang}`,
+            href: `/`,
           },
         ],
       },
@@ -301,7 +301,7 @@ export const ja = {
         items: [
           {
             label: "機能",
-            href: `/${lang}#features`,
+            href: `#features`,
           },
           // {
           //   label: "価格",
@@ -309,7 +309,7 @@ export const ja = {
           // },
           {
             label: "FAQ",
-            href: `/${lang}#faq`,
+            href: `#faq`,
           },
         ],
       },
@@ -337,7 +337,7 @@ export const ja = {
   navbar: {
     RouteList: [
       {
-        href: `/${lang}#features`,
+        href: `#features`,
         label: "機能",
       },
       // {
@@ -349,7 +349,7 @@ export const ja = {
       //   label: "価格",
       // },
       {
-        href: `/${lang}#faq`,
+        href: `#faq`,
         label: "FAQ",
       },
     ],

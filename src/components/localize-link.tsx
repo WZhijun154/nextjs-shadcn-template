@@ -16,7 +16,8 @@ export const LocalizeLink: React.FC<LocalizeLinkProps> = ({
 }) => {
   const isDefaultLang = lang === i18n.defaultLocale;
   const isExternal = href.startsWith("http");
-  const needLocalize = !isDefaultLang && !isExternal;
+  const isEmail = href.startsWith("mailto:");
+  const needLocalize = !isDefaultLang && !isExternal && !isEmail;
   const path = needLocalize ? `/${lang}${href}` : href;
   return <Link href={path} {...props} />;
 };
