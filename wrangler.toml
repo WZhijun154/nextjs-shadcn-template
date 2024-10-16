@@ -1,0 +1,13 @@
+main = ".worker-next/index.mjs"
+name = "my-app"
+compatibility_date = "2024-10-16"
+compatibility_flags = ["nodejs_compat"]
+experimental_assets = { directory = ".worker-next/assets", binding = "ASSETS" }
+
+[[r2_buckets]]
+binding = "TEST_BUCKET"
+bucket_name = "test"
+
+[[kv_namespaces]]
+binding = "NEXT_CACHE_WORKERS_KV"
+id = "d411dd592178474594746b2c2dd4b47a"
