@@ -8,6 +8,6 @@ This is a [Next.js](https://nextjs.org) project template using Shadcn, Tailwind 
 - **Shadcn**: A component library for building user interfaces.
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 - **Responsive Design**: Ensures the application works well on different screen sizes.
-- **Google Analytics (gtag)**: Integrated for tracking and analytics.
-- **Development Utilities**: Various tools and utilities to enhance the development experience.
+- **Google Analytics (gtag)**: Integrated for tracking and analytics (Set gtag in .env).
+- **I18n**: Internationalization support for multiple languages (Set i18n in src/lib/utils-common.ts).
 
