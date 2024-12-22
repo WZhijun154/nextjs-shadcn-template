@@ -10,17 +10,16 @@ import {
   ScrollToTop,
   // FloatingSearchButton,
 } from "@/components/dynamics";
-import { ProxyAgent, setGlobalDispatcher } from "undici";
-import { IS_PRODUCTION, SITE_URL, GTAG_ID } from "@/lib/utils-server-side";
+import { SITE_URL, GTAG_ID } from "@/lib/utils-server-side";
 import { i18n, Locale } from "@/lib/utils-common";
 import { ScrollProgress } from "@/components/dynamics";
 import { getDictionary } from "@/lib/dictionaries";
 
 // let server side fetch operations use proxy agent in development environment
-if (!IS_PRODUCTION) {
-  // modify this to your proxy agent url
-  setGlobalDispatcher(new ProxyAgent("http://localhost:7897"));
-}
+// if (!IS_PRODUCTION) {
+//   // modify this to your proxy agent url
+//   setGlobalDispatcher(new ProxyAgent("http://localhost:7897"));
+// }
 
 // export const metadata = {
 //   // make sure to set the title and description at every page, not here
