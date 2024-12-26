@@ -1,7 +1,7 @@
-import { Medal, Map, Plane, Gift, ChartBar, Wallet, Boxes } from "lucide-react";
+import { Medal, Map, Plane, ChartBar, Wallet, Boxes } from "lucide-react";
 import { TODAY_YEAR, SUPPORT_EMAIL } from "@/lib/utils-server-side";
 
-const brandName = "ShadcnUI/Nextjs";
+const brandName = "社名占い";
 const lang = "ja";
 
 export const ja = {
@@ -9,67 +9,61 @@ export const ja = {
   brandName: brandName,
   landingPage: {
     metadata: {
-      title: `ホームページタイトル`,
-      description: "ホームページの説明",
+      title: `社名占い`,
+      description: "あなたのビジネスに最適な社名を見つけるためのAIツール。",
     },
     hero: {
-      h1: "成功のためのAIパワードパートナー",
+      h1: "起業を成功させるための社名占い",
       description:
-        "プロジェクトに必要なセクションでNextjsランディングページを簡単に構築します。",
+        "あなたのビジネスに最適な社名を見つけるためのAIパワードツール",
       buttonText: "始めましょう",
     },
     howItWorks: {
-      h2: "ステップバイステップガイド",
+      h2: "簡単なステップで社名占いをはじめ",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "",
       steps: [
         {
-          h3: "アクセシビリティ",
+          h3: "ステップ1",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "社名を入力します。",
           icon: <Medal strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
-          h3: "コミュニティ",
+          h3: "ステップ2",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "「この社名で占う」ボタンを押します。",
           icon: <Map strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
-          h3: "スケーラビリティ",
+          h3: "ステップ3",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "結果が表示されます。",
           icon: <Plane strokeWidth={1.5} className="text-primary w-10 h-10" />,
-        },
-        {
-          h3: "ゲーミフィケーション",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-          icon: <Gift strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
       ],
     },
     greatFeatures: {
       h2: "素晴らしい機能",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "社名占いは社名を占いではなく、あなたのビジネスの成功をサポートします。",
       features: [
         {
-          h3: "レスポンシブデザイン",
+          h3: "シンプルなUI",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "社名占いは、ユーザーの目に優しいシンプルなデザインを提供します。",
           icon: <Medal strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
-          h3: "直感的なユーザーインターフェース",
+          h3: "AI視点の占い",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "AIの視点から社名を占い、ビジネスの成功をサポートします。",
           icon: <Map strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
-          h3: "AIパワードインサイト",
+          h3: "安全性を重視",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "社名占いは、ユーザーのデータを安全に保護します。",
           icon: <Plane strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
       ],
@@ -102,10 +96,10 @@ export const ja = {
       ],
     },
     cta: {
-      h2: "すべてのアイデアとコンセプトを1つのインターフェースで",
+      h2: "成功のビジネスを成し遂げ、ますは社名占いから始めましょう。",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-      requestDemoButton: "デモをリクエスト",
+        "AIを活用した社名占いで、ビジネスの成功を後押しします。",
+      requestDemoButton: "始めましょう",
       viewAllFeaturesButton: "すべての機能を見る",
     },
     testimonials: {
@@ -258,28 +252,28 @@ export const ja = {
       description: "一般的な質問への回答を見つけてください...",
       items: [
         {
-          h3: "このテンプレートは無料ですか？",
-          h4: "はい。これは無料のChadcnUIテンプレートです。",
+          h3: "社名占いは無料ですか？",
+          h4: "はい。社名占いは無料です。",
           value: "item-1",
         },
         {
-          h3: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
-          h4: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+          h3: "どのような技術を使用していますか？",
+          h4: "私たちは伝統的な占い方法を使用していますが、AIを活用した占いも提供しています。",
           value: "item-2",
         },
         {
-          h3: "Lorem ipsum dolor sit amet  Consectetur natus dolores minus quibusdam?",
-          h4: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis necessitatibus maxime quis ipsa vitae cumque quo?",
+          h3: "データは安全に保護されていますか？",
+          h4: "社名占いは、ユーザーのデータを安全に保護します。",
           value: "item-3",
         },
         {
-          h3: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?",
-          h4: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+          h3: "社名占いの結果はどのくらいの精度がありますか？",
+          h4: "社名占いは、AIと伝統的な占い方法を組み合わせて高い精度を提供します。",
           value: "item-4",
         },
         {
-          h3: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus?",
-          h4: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+          h3: "社名占いの結果はどのように活用できますか？",
+          h4: "社名占いの結果は、ビジネスのブランディングやマーケティング戦略に役立てることができます。",
           value: "item-5",
         },
       ],
