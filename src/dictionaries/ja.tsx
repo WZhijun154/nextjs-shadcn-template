@@ -331,6 +331,10 @@ export const ja = {
   navbar: {
     RouteList: [
       {
+        href: `/nameuranai`,
+        label: "姓名判断",
+      },
+      {
         href: `#features`,
         label: "機能",
       },
@@ -352,5 +356,11 @@ export const ja = {
     h2: "近日公開",
     description:
       "この機能をお届けするために一生懸命取り組んでいます。お楽しみに！",
+  },
+
+
+  nameJudegement: {
+    h2: "姓名判断",
+    description: "あなたの姓名を判断します。",
   },
 };
