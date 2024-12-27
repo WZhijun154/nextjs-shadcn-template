@@ -1,15 +1,15 @@
 import { Medal, Map, Plane, ChartBar, Wallet, Boxes } from "lucide-react";
 import { TODAY_YEAR, SUPPORT_EMAIL } from "@/lib/utils-server-side";
 
-const brandName = "社名占い";
+const brandName = "AI占い";
 const lang = "ja";
 
 export const ja = {
   lang: lang,
-  brandName: brandName,
+  brandName: `${brandName}   社名占い`,
   landingPage: {
     metadata: {
-      title: `社名占い`,
+      title: `社名占い | AI占い`,
       description: "あなたのビジネスに最適な社名を見つけるためのAIツール。",
     },
     hero: {
