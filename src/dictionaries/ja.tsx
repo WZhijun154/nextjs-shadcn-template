@@ -352,6 +352,10 @@ export const ja = {
         href: `#faq`,
         label: "FAQ",
       },
+      {
+        href: `/${lang}/12constellation`,
+        label: "みずがめ座",
+      },
     ],
   },
   comingSoon: {
