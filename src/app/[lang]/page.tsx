@@ -39,10 +39,10 @@ export default async function Home({
       <Main lang={lang} />
       {/* <Sponsors /> */}
       {/* <About /> */}
-      <HowItWorks lang={lang} />
+      {/* <HowItWorks lang={lang} /> */}
       <Features lang={lang} />
       {/* <Services lang={lang} /> */}
-      <Cta lang={lang} />
+      {/* <Cta lang={lang} /> */}
       {/* <Testimonials lang={lang} /> */}
       {/* <Team lang={lang} /> */}
       {/* <Pricing /> */}

@@ -1,7 +1,7 @@
 import { Medal, Map, Plane, Gift, ChartBar, Wallet, Boxes } from "lucide-react";
 import { TODAY_YEAR, SUPPORT_EMAIL } from "@/lib/utils-server-side";
 
-const brandName = "ShadcnUI/Nextjs";
+const brandName = "明日の占い.online";
 const lang = "ja";
 
 export const ja = {
@@ -9,14 +9,14 @@ export const ja = {
   brandName: brandName,
   landingPage: {
     metadata: {
-      title: `ホームページタイトル`,
-      description: "ホームページの説明",
+      title: `明日の占い.online`,
+      description: "明日の占い.onlineは、明日の運勢を占うための最適なウェブサイトです。毎日の運勢を確認し、明日の運勢を知ることで、より良い一日を迎えましょう。",
     },
     hero: {
-      h1: "成功のためのAIパワードパートナー",
+      h1: "明日の占い.online",
       description:
-        "プロジェクトに必要なセクションでNextjsランディングページを簡単に構築します。",
-      buttonText: "始めましょう",
+        "明日の占い.onlineは、明日の運勢を占うための最適なウェブサイトです。毎日の運勢を確認し、明日の運勢を知ることで、より良い一日を迎えましょう。",
+      buttonText: "明日の運勢を占う",
     },
     howItWorks: {
       h2: "ステップバイステップガイド",
@@ -50,26 +50,26 @@ export const ja = {
       ],
     },
     greatFeatures: {
-      h2: "素晴らしい機能",
+      h2: "充実した占い機能",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "明日の運勢を詳しく知るための3つの主要機能をご用意しています。",
       features: [
         {
-          h3: "レスポンシブデザイン",
+          h3: "AIによる個別化された占い結果",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "最新のAI技術を活用し、あなたの生年月日や星座に基づいて、明日の運勢を詳細に分析。より正確で個人に最適化された占い結果をお届けします。",
           icon: <Medal strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
-          h3: "直感的なユーザーインターフェース",
+          h3: "運勢カレンダー機能",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "過去の運勢履歴と未来の予測を一目で確認できるカレンダー機能を搭載。毎日の運勢の変化を追跡し、より良い選択のためのガイダンスを提供します。",
           icon: <Map strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
         {
-          h3: "AIパワードインサイト",
+          h3: "詳細な運勢レポート",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+            "恋愛運、金運、仕事運など、各分野における詳細な占い結果を提供。さらに、ラッキーアイテムやラッキーカラーなど、明日をより良い日にするためのアドバイスも含まれています。",
           icon: <Plane strokeWidth={1.5} className="text-primary w-10 h-10" />,
         },
       ],
@@ -102,7 +102,7 @@ export const ja = {
       ],
     },
     cta: {
-      h2: "すべてのアイデアとコンセプトを1つのインターフェースで",
+      h2: "すべてのアイ���アとコンセプトを1つのインターフェースで",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
       requestDemoButton: "デモをリクエスト",
@@ -255,31 +255,31 @@ export const ja = {
     },
     faq: {
       h2: "よくある質問",
-      description: "一般的な質問への回答を見つけてください...",
+      description: "明日の占いについてよくある質問への回答をご覧ください",
       items: [
         {
-          h3: "このテンプレートは無料ですか？",
-          h4: "はい。これは無料のChadcnUIテンプレートです。",
+          h3: "明日の占いを無料で占うことはできますか？",
+          h4: "はい、明日の運勢を無料で占うことができます。基本的な運勢診断は無料でご利用いただけます。より詳細な運勢分析やパーソナライズされた占い結果をご希望の場合は、プレミアムサービスをご検討ください。",
           value: "item-1",
         },
         {
-          h3: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
-          h4: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+          h3: "明日の運勢占いの精度はどのくらいですか？",
+          h4: "当サイトでは、最新のAI技術と伝統的な占星術の知識を組み合わせることで、高い精度の運勢予測を実現しています。さらに、あなたの生年月日や星座情報を基に、個人に最適化された結果をお届けしています。",
           value: "item-2",
         },
         {
-          h3: "Lorem ipsum dolor sit amet  Consectetur natus dolores minus quibusdam?",
-          h4: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis necessitatibus maxime quis ipsa vitae cumque quo?",
+          h3: "明日の占いの結果はいつ更新されますか？",
+          h4: "運勢の結果は毎日0時に更新されます。翌日の運勢を前日から確認することができるため、事前に準備を整えることが可能です。また、運勢カレンダー機能では、過去の運勢履歴や将来の傾向も確認できます。",
           value: "item-3",
         },
         {
-          h3: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?",
-          h4: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+          h3: "恋愛運や金運など、特定の運勢だけを占うことはできますか？",
+          h4: "はい、可能です。恋愛運、金運、仕事運、健康運など、分野別の運勢診断に対応しています。それぞれの分野について、詳細な占い結果とアドバイスを提供しています。",
           value: "item-4",
         },
         {
-          h3: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus?",
-          h4: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+          h3: "運勢の結果を改善するためのアドバイスはありますか？",
+          h4: "はい、運勢診断には具体的なアドバイスが含まれています。その日のラッキーカラー、ラッキーアイテム、開運アドバイスなど、運勢を良い方向に導くためのガイダンスを提供しています。また、定期的に運勢をチェックすることで、より効果的に運気の流れを活用できます。",
           value: "item-5",
         },
       ],
