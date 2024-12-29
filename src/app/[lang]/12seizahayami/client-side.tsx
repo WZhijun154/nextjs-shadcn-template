@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import confetti from 'canvas-confetti';
 
 function getSeiza(month: number, day: number): string {
     if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
@@ -66,6 +67,13 @@ export function SeizaChecker() {
     const result = getSeiza(monthNum, dayNum);
     setSeiza(result);
     setError("");
+
+    // Trigger confetti effect
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
   };
 
   return (
