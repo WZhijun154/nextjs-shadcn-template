@@ -6,12 +6,14 @@ type LocalizeLinkProps = {
   href: string;
   lang: string;
   children: React.ReactNode;
+  className?: string;
   [key: string]: unknown;
 };
 
 export const LocalizeLink: React.FC<LocalizeLinkProps> = ({
   href,
   lang,
+  className,
   ...props
 }) => {
   const isDefaultLang = lang === i18n.defaultLocale;
@@ -19,5 +21,5 @@ export const LocalizeLink: React.FC<LocalizeLinkProps> = ({
   const isEmail = href.startsWith("mailto:");
   const needLocalize = !isDefaultLang && !isExternal && !isEmail;
   const path = needLocalize ? `/${lang}${href}` : href;
-  return <Link href={path} {...props} />;
+  return <Link href={path} className={className} {...props} />;
 };

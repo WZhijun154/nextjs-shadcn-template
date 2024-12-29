@@ -345,10 +345,10 @@ export const ja = {
         href: `/${lang}/12seizahayami`,
         label: "12星座早見表",
       },
-      {
-        href: `/${lang}/seizakakunin`,
-        label: "あなたの星座を確認",
-      },
+      // {
+      //   href: `/${lang}/seizakakunin`,
+      //   label: "あなたの星座を確認",
+      // },
       // {
       //   href: `#features`,
       //   label: "機能",
