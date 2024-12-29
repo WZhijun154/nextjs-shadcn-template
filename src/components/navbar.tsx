@@ -61,7 +61,7 @@ export const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
               <SheetContent side={"right"}>
                 <SheetHeader>
                   <SheetTitle className="font-bold text-xl">
-                    Shadcn/Nextjs
+                    {dictionary.brandName}
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col justify-center items-center gap-2 mt-4">
