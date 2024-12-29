@@ -8,5 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}`,
       lastModified: current,
     }, 
+    {
+      url: `${SITE_URL}/12seizahayami`,
+      lastModified: current,
+    }
   ];
 }

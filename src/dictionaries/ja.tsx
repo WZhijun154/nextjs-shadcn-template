@@ -1,5 +1,6 @@
 import { Medal, Map, Plane, Gift, ChartBar, Wallet, Boxes } from "lucide-react";
 import { TODAY_YEAR, SUPPORT_EMAIL } from "@/lib/utils-server-side";
+import { HeartFilledIcon } from "@radix-ui/react-icons";
 
 const brandName = "明日の占い | 無料で明日の運勢を占う";
 const lang = "ja";
@@ -343,6 +344,10 @@ export const ja = {
       {
         href: `/${lang}/12seizahayami`,
         label: "12星座早見表",
+      },
+      {
+        href: `/${lang}/seizakakunin`,
+        label: "あなたの星座を確認",
       },
       // {
       //   href: `#features`,
