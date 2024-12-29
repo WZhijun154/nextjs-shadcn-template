@@ -1,7 +1,7 @@
 import { Medal, Map, Plane, Gift, ChartBar, Wallet, Boxes } from "lucide-react";
 import { TODAY_YEAR, SUPPORT_EMAIL } from "@/lib/utils-server-side";
 
-const brandName = "明日の占い.online";
+const brandName = "明日の占い | 無料で明日の運勢を占う";
 const lang = "ja";
 
 export const ja = {
