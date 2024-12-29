@@ -337,9 +337,17 @@ export const ja = {
   navbar: {
     RouteList: [
       {
-        href: `#features`,
-        label: "機能",
+        href: `/${lang}`,
+        label: "ホーム",
       },
+      {
+        href: `/${lang}/12seizahayami`,
+        label: "12星座早見表",
+      },
+      // {
+      //   href: `#features`,
+      //   label: "機能",
+      // },
       // {
       //   href: `/${lang}#testimonials`,
       //   label: "お客様の声",
@@ -348,14 +356,12 @@ export const ja = {
       //   href: `/${lang}#pricing`,
       //   label: "価格",
       // },
-      {
-        href: `#faq`,
-        label: "FAQ",
-      },
-      {
-        href: `/${lang}/12constellation`,
-        label: "みずがめ座",
-      },
+      // {
+      //   href: `#faq`,
+      //   label: "FAQ",
+      // },
+
+
     ],
   },
   comingSoon: {
