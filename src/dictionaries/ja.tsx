@@ -10,8 +10,8 @@ export const ja = {
   brandName: brandName,
   landingPage: {
     metadata: {
-      title: `明日の占い.online`,
-      description: "明日の占い.onlineは、明日の運勢を占うための最適なウェブサイトです。毎日の運勢を確認し、明日の運勢を知ることで、より良い一日を迎えましょう。",
+      title: `明日の占い | 無料で明日の運勢を占う | 12星座別占い・運勢カレンダー`,
+      description: "明日の占いは、明日の運勢を占うための最適なウェブサイトです。毎日の運勢を確認し、明日の運勢を知ることで、より良い一日を迎えましょう。",
     },
     hero: {
       h1: "明日の占い.online",
